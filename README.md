@@ -203,3 +203,63 @@ Big Data is characterized by the **5Vs**:
 Big Data technologies process and analyze **massive datasets** to improve efficiency in **healthcare, IoT, predictive maintenance, and AI applications**.
 
 ---
+
+### 29(a) Four Stages of IoT Architecture System
+### [(CO4)(Analyse/HOCQ)]
+
+IoT systems typically follow a **four-stage architecture**, ensuring seamless data collection, processing, and decision-making.
+
+### **1. Perception Layer (Sensing Layer)**
+- Comprises **sensors, actuators, and edge devices** that collect real-world data.
+- Examples: Temperature sensors, RFID tags, cameras, GPS modules.
+- **Function**: Detects physical parameters and transmits data to the next stage.
+
+### **2. Network Layer**
+- Transmits data from the perception layer to the processing system.
+- Uses **Wi-Fi, Bluetooth, Zigbee, LoRaWAN, Cellular (4G/5G), or Ethernet**.
+- **Function**: Ensures secure and reliable communication between IoT devices and cloud servers.
+
+### **3. Processing Layer (Edge or Fog Computing Layer)**
+- Handles **local data processing and decision-making** before sending data to the cloud.
+- Includes **edge servers, IoT gateways, and microcontrollers (Arduino, Raspberry Pi, ESP32).**
+- **Function**: Reduces latency and network congestion by pre-processing data.
+
+### **4. Application Layer**
+- Provides a user interface for monitoring and controlling IoT systems.
+- Examples: **Mobile apps, web dashboards, voice assistants (Alexa, Google Assistant).**
+- **Function**: Translates data into meaningful insights and enables user interaction.
+
+Each stage works together to create an efficient **end-to-end IoT ecosystem**, ensuring real-time monitoring, automation, and decision-making.
+
+---
+
+### 29(b) Suitable System for Low-Cost, Low-Complexity Solutions
+### [(CO5)(Apply/IOCQ)]
+
+For **low-cost and low-complexity IoT applications** like **home automation and smart irrigation**, a suitable system should have:
+
+### **1. Microcontroller-Based Architecture**
+- **ESP32 / ESP8266 / Arduino Uno** for simple automation tasks.
+- **LoRa / Zigbee / Wi-Fi** for low-power wireless communication.
+
+### **2. Lightweight Data Processing**
+- **Edge computing** using **Raspberry Pi** or ESP32 to process small datasets.
+- **No need for heavy cloud computing**; simple **local storage (SD card) or Firebase** is sufficient.
+
+### **3. Energy-Efficient and Cost-Effective Sensors**
+- **Soil moisture sensors** for smart irrigation.
+- **Motion and light sensors** for home automation.
+- **DHT11/DHT22 temperature and humidity sensors** for climate control.
+
+### **4. Low-Power Communication Protocols**
+- **MQTT (Message Queuing Telemetry Transport)** for lightweight IoT messaging.
+- **Bluetooth Low Energy (BLE) or LoRaWAN** for minimal power consumption.
+
+### **Example Use Case**: **Smart Irrigation System**
+- **ESP32 collects soil moisture data** and controls water flow.
+- **LoRa transmits data to a remote monitoring system**.
+- **Mobile app displays real-time soil conditions and automation status**.
+
+By utilizing **low-power microcontrollers, edge computing, and efficient sensors**, such solutions offer an optimal balance between **cost, power consumption, and performance**.
+
+---
