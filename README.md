@@ -53,6 +53,24 @@
 - (d) Data Link Layer Protocol  
 
 ---
+### Fill in the blanks
+
+1. Big data refers to a massive amount of data that keeps on growing exponentially with time.
+2. Open source framework like **Hadoop** was essential for the growth of Big Data.	
+3. **Unstructured data** refers to data that lacks any specific form or structure.
+4. **Predictive analytics** is a statistical method that utilizes algorithms and machine learning to identify trends in data and predict future behaviour.	
+5. Matrix and algebra operations can be performed using **Map Reduce**.
+6. Matrix Multiplication can be done by **cascade** of two Map Reduce operations.
+7. **Reduce** phase combines all values associated with an identical key.
+8. Once shuffling is done, the output is sent to the **sorting** phase where all the (key, value) pairs are sorted automatically.
+9. IoT function Block provides the system capabilities for **sensing**, **actuation monitoring**, and **control functions**.
+10. Authentication, authorization, and context integrity come under **Security** systems.
+11. Request-Respond, Publish–Subscribe are IoT **communication** models.
+12. IoT is enabled by several technologies including **Wireless Sensor Networks (WSN)**, **Cloud Computing**, and **Big Data Analysis**.
+13. A RESTful web service is a web API implemented using **HTTP** and **REST** principles.
+14. IoT applications provide an interface that users can use to control and monitor various aspects of **IoT Systems**.
+15. REST services operate over **HTTP**, and each request is independent of each other.
+16. **Apache Spark** is an open-source big data processing framework built around speed, ease of use, and sophisticated analysis, developed at UC Berkeley’s AMP Lab.
 
 ## Group D
 
