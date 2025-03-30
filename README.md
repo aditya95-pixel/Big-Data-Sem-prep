@@ -550,17 +550,7 @@ NFV is built on three primary components:
    - Handles lifecycle management, automation, and orchestration of VNFs.
 
 ### **Block Diagram of NFV Architecture**
-```
-+-------------------------------------------+
-|      NFV Management & Orchestration      |
-+-------------------------------------------+
-|     Virtualized Network Functions (VNFs)  |
-|  (Firewall, Router, Load Balancer, etc.)  |
-+-------------------------------------------+
-|      NFV Infrastructure (NFVI)           |
-|  (Compute, Storage, Networking Resources) |
-+-------------------------------------------+
-```
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/nfvarch.png?raw=true)
 
 ### **How NFV Works:**
 1. **A user requests a network function (e.g., firewall, VPN, load balancer).**
