@@ -154,3 +154,52 @@ Several technologies enable IoT applications across industries. Some key applica
 These applications leverage IoT technologies like **RFID, Cloud Computing, Edge AI, 5G, and Blockchain** to improve efficiency, automation, and connectivity.
 
 ---
+
+### 28(a) Comparison of Infrastructure as a Service (IaaS) vs. Platform as a Service (PaaS)
+### [(CO6)(Analyse/HOCQ)]
+
+| Feature                | Infrastructure as a Service (IaaS) | Platform as a Service (PaaS) |
+|------------------------|----------------------------------|------------------------------|
+| **Definition**        | Provides virtualized computing resources over the cloud. | Provides a development environment with tools and services. |
+| **Control Level**     | Full control over the infrastructure (servers, storage, networking). | Limited control, focuses on application development and deployment. |
+| **Management**       | Users manage operating systems, applications, and storage. | Cloud provider manages OS, runtime, and middleware. |
+| **Scalability**       | Highly scalable, users can configure resources as needed. | Scales automatically but within the provider’s framework. |
+| **Target Users**      | IT administrators, system architects needing custom infrastructure. | Developers focusing on building and deploying applications. |
+| **Examples**         | AWS EC2, Google Compute Engine, Microsoft Azure Virtual Machines. | Google App Engine, AWS Elastic Beanstalk, Microsoft Azure App Services. |
+
+### Key Analysis:
+- **IaaS is best for users who need full control over their infrastructure**, while **PaaS is ideal for developers who want a ready-to-use development platform**.
+- **IaaS requires more configuration**, whereas **PaaS simplifies development with pre-configured tools**.
+
+---
+
+### 28(b) Cloud Computing Services Offered to Users
+### [(CO6)(Remember/LOCQ)]
+
+Cloud computing offers various services categorized into the following:
+
+1. **Infrastructure as a Service (IaaS)** - Provides virtual machines, storage, and networking (e.g., AWS EC2, Google Compute Engine).
+2. **Platform as a Service (PaaS)** - Offers a development platform with pre-built tools (e.g., AWS Elastic Beanstalk, Heroku).
+3. **Software as a Service (SaaS)** - Provides ready-to-use software over the cloud (e.g., Google Drive, Microsoft 365, Dropbox).
+4. **Function as a Service (FaaS)** - Supports serverless computing where functions run on-demand (e.g., AWS Lambda, Google Cloud Functions).
+5. **Storage as a Service (STaaS)** - Offers cloud-based storage solutions (e.g., Google Drive, OneDrive, Amazon S3).
+6. **Database as a Service (DBaaS)** - Provides managed database services (e.g., AWS RDS, Firebase, Google Cloud SQL).
+
+These services help users **reduce infrastructure costs, increase scalability, and enhance accessibility** in cloud environments.
+
+---
+
+### 28(c) Characteristics of Big Data
+### [(CO5)(Analyse/IOCQ)]
+
+Big Data is characterized by the **5Vs**:
+
+1. **Volume** - Large amounts of data generated from various sources like sensors, healthcare devices, and IoT systems.
+2. **Velocity** - High-speed data generation and processing in real-time or near real-time.
+3. **Variety** - Data comes in multiple formats: structured (databases), semi-structured (JSON, XML), and unstructured (videos, images, logs).
+4. **Veracity** - Ensures data accuracy and reliability, as sensor data may contain noise or inconsistencies.
+5. **Value** - Extracting meaningful insights and patterns to drive decision-making and innovations.
+
+Big Data technologies process and analyze **massive datasets** to improve efficiency in **healthcare, IoT, predictive maintenance, and AI applications**.
+
+---
