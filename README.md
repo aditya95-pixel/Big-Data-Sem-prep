@@ -306,4 +306,41 @@ Several IoT-based home automation solutions are widely used for smart living. So
 
 These applications enhance urban infrastructure, leading to **efficient, sustainable, and connected smart cities**.
 
+### 31(a) Comparison: Air Pollution Monitoring vs. Noise Pollution Monitoring in IoT
+### [(CO5)(Analyse/HOCQ)]
 
+| Feature                | Air Pollution Monitoring System | Noise Pollution Monitoring System |
+|------------------------|--------------------------------|----------------------------------|
+| **Purpose**           | Monitors air quality by detecting pollutants like CO₂, NO₂, PM2.5, etc. | Measures noise levels in dB to assess environmental noise pollution. |
+| **Key Sensors**       | Gas sensors (MQ-135, CO₂ sensors), PM2.5 sensors | Microphones, decibel meters (MEMS, Electret Condenser Microphones). |
+| **Data Processing**   | Analyzes pollutant concentration trends over time. | Detects noise intensity variations and threshold breaches. |
+| **Real-time Alerts**  | Sends warnings if pollution exceeds safe levels. | Notifies authorities if noise pollution surpasses limits. |
+| **Use Cases**        | Smart cities, industrial emissions control, vehicle pollution tracking. | Urban noise pollution management, workplace safety, smart campuses. |
+| **Impact**           | Reduces respiratory diseases and improves public health. | Helps enforce noise regulations and prevents hearing-related issues. |
+
+Both systems contribute to **environmental sustainability** and **public well-being** under the IoT domain.
+
+---
+
+### 31(b) Machine-to-Machine (M2M) Communication
+### [(CO6)(Remember/LOCQ)]
+
+M2M (Machine-to-Machine) communication refers to the **direct exchange of data between devices** without human intervention. It enables automation across various industries using IoT networks.
+
+### **Key Characteristics:**
+- **Autonomous Data Exchange** - Devices communicate in real time without manual input.
+- **Network Connectivity** - Uses Wi-Fi, Zigbee, LoRa, Cellular (4G/5G), or LPWAN.
+- **Remote Monitoring & Control** - Sensors and actuators work together to optimize operations.
+- **Minimal Human Intervention** - Reduces errors and enhances efficiency.
+
+M2M plays a crucial role in **smart industries, healthcare, agriculture, and transportation** by enabling seamless automation.
+
+---
+
+### 31(c) Two M2M Applications
+### [(CO6)(Apply/IOCQ)]
+
+1. **Smart Metering** - Automated electricity, water, and gas meters transmit consumption data to utility providers, improving billing accuracy and resource management.
+2. **Fleet Management** - IoT-enabled vehicle tracking systems monitor fuel usage, route optimization, and maintenance schedules for logistics companies.
+
+M2M applications **enhance operational efficiency, reduce costs, and improve decision-making** in various industries.
