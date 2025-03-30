@@ -263,3 +263,47 @@ For **low-cost and low-complexity IoT applications** like **home automation and 
 By utilizing **low-power microcontrollers, edge computing, and efficient sensors**, such solutions offer an optimal balance between **cost, power consumption, and performance**.
 
 ---
+
+### 30(a) IoT System for Noise Monitoring
+### [(CO5)(Analyse/HOCQ)]
+
+An IoT-based noise monitoring system is designed to detect and analyze noise levels in different environments, such as **urban areas, industries, and residential zones**. 
+
+### **System Components:**
+1. **Sound Sensors (Microphones & Decibel Meters)** - Captures real-time noise levels.
+2. **Microcontrollers (ESP32/Raspberry Pi/Arduino)** - Processes the sensor data.
+3. **Wireless Communication (Wi-Fi, LoRa, or GSM)** - Sends data to cloud storage.
+4. **Cloud/Edge Computing (AWS IoT, Google Cloud IoT, ThingSpeak)** - Analyzes noise trends.
+5. **Dashboard & Alerts (Mobile App/Web Interface)** - Displays noise levels and triggers notifications when thresholds are exceeded.
+
+### **Working Mechanism:**
+- The **sound sensors measure noise intensity** and send data to a microcontroller.
+- The processed data is **transmitted to the cloud** for analysis and visualization.
+- If noise levels exceed a predefined limit, **alerts are sent to authorities or users**.
+- The system can be used for **pollution monitoring, workplace safety, and smart city initiatives**.
+
+---
+
+### 30(b) IoT-Specific Home Automation Systems
+### [(CO5,CO6)(Remember/LOCQ)]
+
+Several IoT-based home automation solutions are widely used for smart living. Some of the key systems include:
+
+1. **Smart Lighting (Philips Hue, LIFX)** - IoT-enabled bulbs controlled via mobile apps or voice assistants.
+2. **Smart Thermostats (Nest, Ecobee)** - Automatically adjust home temperature for energy efficiency.
+3. **Smart Security Cameras (Ring, Arlo, Wyze)** - Motion-detecting cameras for home surveillance.
+4. **Smart Door Locks (August, Yale, Schlage Encode)** - IoT-based keyless entry with remote control.
+5. **Smart Plugs (TP-Link Kasa, Wemo)** - Allows remote control of appliances via IoT connectivity.
+6. **Voice Assistants (Amazon Alexa, Google Assistant, Apple Siri)** - Centralized control for smart home devices.
+
+---
+
+### 30(c) IoT-Based City Automation Applications
+### [(CO5,CO6)(Apply/IOCQ)]
+
+1. **Smart Traffic Management** - IoT sensors and AI optimize traffic flow, reducing congestion and improving transportation efficiency.
+2. **Smart Waste Management** - IoT-enabled trash bins send fill-level data to optimize waste collection routes, reducing operational costs.
+
+These applications enhance urban infrastructure, leading to **efficient, sustainable, and connected smart cities**.
+
+
