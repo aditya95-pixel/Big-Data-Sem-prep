@@ -559,3 +559,63 @@ NFV is built on three primary components:
 4. **Scaling and optimization are handled automatically by NFV-MANO.**
 
 NFV improves network **efficiency, automation, and cost-effectiveness**, making it a key technology in modern telecom and cloud computing.
+
+# Sensor Properties & Network Function Virtualization (NFV)
+
+## 36(a) Properties of Sensors: Range, Sensitivity, and Resolution
+### [(CO5)(Analyse/HOCQ)]
+
+Sensors are key components of IoT systems. The most important properties are:
+
+1. **Range**:
+   - Defines the minimum and maximum values the sensor can measure.
+   - Example: A temperature sensor with a range of **-40°C to 125°C**.
+
+2. **Sensitivity**:
+   - The smallest change in input that causes a detectable change in output.
+   - Example: A pressure sensor with **1 Pa sensitivity** detects very small pressure variations.
+
+3. **Resolution**:
+   - The smallest measurable unit of the sensor output.
+   - Example: A digital thermometer with **0.1°C resolution** can distinguish changes as small as 0.1°C.
+
+Higher **sensitivity and resolution** improve precision, while an appropriate **range** ensures applicability for various conditions.
+
+---
+
+## 36(b) Advantages of Network Function Virtualization (NFV)
+### [(CO5)(Remember/LOCQ)]
+
+NFV provides several key benefits:
+
+1. **Reduced Hardware Dependency** – Eliminates reliance on physical network devices by virtualizing functions.
+2. **Cost Efficiency** – Decreases capital and operational expenses by using software-based network functions.
+3. **Scalability & Flexibility** – Quickly deploy and adjust network services on demand.
+4. **Improved Automation** – Simplifies network management with automated provisioning and orchestration.
+5. **Faster Service Deployment** – Enables rapid rollout of new network services without hardware changes.
+6. **Optimized Resource Utilization** – Allocates compute and networking resources dynamically, improving efficiency.
+
+NFV **modernizes network infrastructure** and enhances service agility for cloud-based and telecom environments.
+
+---
+
+## 36(c) Working of NFV (with Block Diagram)
+### [(CO5)(Apply/IOCQ)]
+
+### **NFV Architecture & Workflow**
+NFV consists of three main components:
+
+1. **Virtualized Network Functions (VNFs)** – Software-based network services (e.g., firewalls, routers, load balancers).
+2. **NFV Infrastructure (NFVI)** – Compute, storage, and networking resources where VNFs are deployed.
+3. **NFV Management & Orchestration (NFV-MANO)** – Manages lifecycle, automation, and deployment of VNFs.
+
+### **Block Diagram of NFV Architecture**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/nfvarch.png?raw=true)
+
+### **How NFV Works:**
+1. **A network function (e.g., firewall) is requested.**
+2. **The NFV Orchestrator assigns resources and deploys VNFs.**
+3. **The virtual function processes network traffic dynamically.**
+4. **Scaling and optimization are managed automatically.**
+
+NFV enhances **network agility, cost-efficiency, and automation**, making it essential for modern telecom and cloud computing networks.
