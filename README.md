@@ -445,3 +445,60 @@ SDN consists of three key components:
    - Uses **OpenFlow, NETCONF, or other southbound APIs** for communication.
 
 Together, these layers **enable programmable, agile, and efficient networking**, making SDN a transformative technology in modern networking.
+
+### 34(a) Comparison: SDN vs. Traditional Networking
+### [(CO4)(Analyse/HOCQ)]
+
+| Feature                 | Traditional Networking                        | Software-Defined Networking (SDN) |
+|-------------------------|----------------------------------------------|----------------------------------|
+| **Network Control**     | Control plane is embedded in network devices. | Control plane is centralized in an SDN controller. |
+| **Flexibility**         | Static configuration with limited adaptability. | Highly programmable and flexible. |
+| **Scalability**         | Difficult to scale due to hardware dependence. | Easily scalable with cloud-based management. |
+| **Management**         | Managed individually on each device. | Centralized control for easier management. |
+| **Traffic Handling**     | Uses traditional routing protocols (OSPF, BGP). | Dynamic flow-based traffic control. |
+| **Security**            | Security policies applied per device. | Global security enforcement through the controller. |
+| **Implementation Cost** | High due to specialized hardware. | Lower cost using commodity hardware. |
+
+SDN provides a **more agile, cost-effective, and scalable** approach to networking compared to traditional networking.
+
+---
+
+### 34(b) Advantages of SDN
+### [(CO4)(Remember/LOCQ)]
+
+SDN offers multiple benefits that enhance network efficiency and management:
+
+1. **Centralized Control** – Administrators can manage the entire network from a single point.
+2. **Flexibility** – Dynamic policy updates without modifying physical devices.
+3. **Cost-Effective** – Uses general-purpose hardware instead of expensive network devices.
+4. **Improved Security** – Centralized monitoring and security enforcement.
+5. **Optimized Traffic Management** – Intelligent routing and load balancing improve performance.
+6. **Automation** – Reduces manual configuration through network programming.
+
+SDN simplifies **network operations and enhances adaptability** for modern IT environments.
+
+---
+
+### 34(c) SDN Architecture
+### [(CO4)(Apply/IOCQ)]
+
+SDN architecture consists of three key layers:
+
+### **1. Application Layer**
+- Contains **network applications** that define services like security, routing, and monitoring.
+- Examples: Firewalls, Intrusion Detection Systems (IDS), and QoS applications.
+
+### **2. Control Layer (SDN Controller)**
+- Acts as the **central intelligence** of the SDN.
+- Manages and configures network behavior using southbound APIs (e.g., OpenFlow).
+- Example Controllers: **ONOS, OpenDaylight, Ryu**.
+
+### **3. Infrastructure Layer (Data Plane)**
+- Comprises physical and virtual networking devices such as **switches, routers, and access points**.
+- Forwards data packets based on the SDN controller's instructions.
+
+### **Communication Interfaces**
+- **Northbound APIs**: Connect applications to the SDN controller (e.g., REST APIs).
+- **Southbound APIs**: Connect controllers to network devices (e.g., OpenFlow, NETCONF).
+
+This layered architecture **enhances network programmability, automation, and efficiency**, making SDN an essential technology for modern networks.
