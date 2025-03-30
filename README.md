@@ -502,3 +502,70 @@ SDN architecture consists of three key layers:
 - **Southbound APIs**: Connect controllers to network devices (e.g., OpenFlow, NETCONF).
 
 This layered architecture **enhances network programmability, automation, and efficiency**, making SDN an essential technology for modern networks.
+
+### 35(a) Comparison: SDN vs. Traditional Networking
+### [(CO4)(Analyse/HOCQ)]
+
+| Feature                 | Traditional Networking                        | Software-Defined Networking (SDN) |
+|-------------------------|----------------------------------------------|----------------------------------|
+| **Network Control**     | Embedded in each network device. | Centralized in an SDN controller. |
+| **Flexibility**         | Rigid and static configurations. | Highly programmable and flexible. |
+| **Scalability**         | Limited due to hardware dependency. | Easily scalable with virtualized controllers. |
+| **Management**         | Managed per device. | Centrally managed via controllers. |
+| **Traffic Handling**     | Uses traditional routing protocols. | Implements dynamic flow-based forwarding. |
+| **Security**            | Implemented device by device. | Centralized security policies. |
+| **Cost** | High, requires specialized hardware. | Lower, can use general-purpose hardware. |
+
+SDN **separates the control plane from the data plane**, making networks more programmable and efficient.
+
+---
+
+### 35(b) Advantages of Network Function Virtualization (NFV)
+### [(CO5)(Remember/LOCQ)]
+
+Network Function Virtualization (NFV) offers several advantages:
+
+1. **Cost Savings** – Replaces dedicated network hardware with software-based virtual network functions (VNFs), reducing capital and operational expenses.
+2. **Flexibility & Scalability** – Services can be scaled up or down dynamically based on demand.
+3. **Rapid Deployment** – New network functions can be deployed quickly without hardware changes.
+4. **Automation & Orchestration** – Simplifies network management by automating service deployment and scaling.
+5. **Improved Network Efficiency** – Optimizes resource allocation by running multiple virtualized functions on the same physical infrastructure.
+6. **Reduced Power Consumption** – Uses fewer physical devices, leading to energy savings.
+
+NFV **enhances the agility of network services**, making it ideal for cloud and telecom applications.
+
+---
+
+### 35(c) Working of NFV (with Block Diagram)
+### [(CO5)(Apply/IOCQ)]
+
+### **NFV Architecture & Workflow**
+NFV is built on three primary components:
+
+1. **Virtualized Network Functions (VNFs)**
+   - Software-based implementations of network functions (e.g., firewalls, routers, load balancers).
+2. **NFV Infrastructure (NFVI)**
+   - Provides the compute, storage, and networking resources needed to run VNFs.
+3. **NFV Management and Orchestration (NFV-MANO)**
+   - Handles lifecycle management, automation, and orchestration of VNFs.
+
+### **Block Diagram of NFV Architecture**
+```
++-------------------------------------------+
+|      NFV Management & Orchestration      |
++-------------------------------------------+
+|     Virtualized Network Functions (VNFs)  |
+|  (Firewall, Router, Load Balancer, etc.)  |
++-------------------------------------------+
+|      NFV Infrastructure (NFVI)           |
+|  (Compute, Storage, Networking Resources) |
++-------------------------------------------+
+```
+
+### **How NFV Works:**
+1. **A user requests a network function (e.g., firewall, VPN, load balancer).**
+2. **NFV Orchestration deploys the requested VNFs on available NFVI resources.**
+3. **The VNF runs in a virtualized environment, processing network traffic dynamically.**
+4. **Scaling and optimization are handled automatically by NFV-MANO.**
+
+NFV improves network **efficiency, automation, and cost-effectiveness**, making it a key technology in modern telecom and cloud computing.
