@@ -139,7 +139,7 @@ This model is **best suited for IoT applications where data privacy, reliability
 
 ---
 
-## 27(c) Applications of IoT Enabling Technologies
+### 27(c) Applications of IoT Enabling Technologies
 ### [(CO5)(Apply/IOCQ)]
 
 Several technologies enable IoT applications across industries. Some key applications include:
