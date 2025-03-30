@@ -103,3 +103,54 @@ In the **Push-Pull Communication Model**, **message queues** manage data flow be
 This model is widely used in **distributed systems, cloud services, and IoT networks** to improve communication reliability and efficiency.
 
 ---
+
+### 27(a) Comparison of REST-Based Communication APIs vs. WebSocket-Based Communication APIs
+### [(CO6)(Analyse/HOCQ)]
+
+| Feature                | REST-Based Communication API | WebSocket-Based Communication API |
+|------------------------|-----------------------------|-----------------------------------|
+| **Communication Type** | Request-Response (Synchronous) | Full-Duplex (Asynchronous) |
+| **Connection**         | Stateless, new connection for each request | Persistent, single connection |
+| **Data Transfer**      | Each request gets a separate response | Continuous data exchange |
+| **Latency**           | Higher due to repeated handshakes | Lower since connection is persistent |
+| **Best Use Case**      | Suitable for standard web applications (e.g., RESTful APIs) | Ideal for real-time applications (e.g., chat, gaming, stock updates) |
+| **Scalability**       | Scales well with caching and load balancing | Requires persistent connections, may increase resource consumption |
+
+### Key Analysis:
+- **REST is best for request-response interactions**, while **WebSockets are optimal for real-time bidirectional communication**.
+- **WebSockets reduce latency and bandwidth** but require **more resources** to maintain persistent connections.
+- REST is widely used in **web services and IoT APIs**, while WebSockets are better for **real-time IoT applications** like smart home automation and live monitoring.
+
+---
+
+### 27(b) Exclusive Pair Communication Model
+### [(CO6)(Remember/LOCQ)]
+
+The **Exclusive Pair Communication Model** is a **one-to-one communication mechanism** where two devices establish a **direct and persistent** connection. 
+
+### Features:
+1. **Dedicated Connection** - A stable, continuous link between two devices.
+2. **Low Latency** - Ensures fast and reliable data transfer.
+3. **Secure Communication** - Encryption and authentication mechanisms enhance security.
+4. **Limited Scalability** - Not suitable for systems requiring multiple concurrent connections.
+5. **Example Use Cases** - Used in **Bluetooth Pairing, Secure IoT Messaging, and Encrypted Device Communication**.
+
+This model is **best suited for IoT applications where data privacy, reliability, and low latency are critical**.
+
+---
+
+## 27(c) Applications of IoT Enabling Technologies
+### [(CO5)(Apply/IOCQ)]
+
+Several technologies enable IoT applications across industries. Some key applications include:
+
+1. **Smart Homes & Cities** - IoT-enabled lighting, energy management, and smart grids.
+2. **Healthcare & Wearables** - Remote patient monitoring, smartwatches, and fitness trackers.
+3. **Industrial Automation** - Predictive maintenance, robotics, and supply chain tracking.
+4. **Agriculture** - Smart irrigation systems, soil monitoring, and automated farming.
+5. **Transportation & Logistics** - Connected vehicles, GPS tracking, and fleet management.
+6. **Retail & Customer Experience** - Smart shelves, personalized shopping experiences, and automated checkout systems.
+
+These applications leverage IoT technologies like **RFID, Cloud Computing, Edge AI, 5G, and Blockchain** to improve efficiency, automation, and connectivity.
+
+---
