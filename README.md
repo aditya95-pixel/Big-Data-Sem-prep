@@ -560,9 +560,7 @@ NFV is built on three primary components:
 
 NFV improves network **efficiency, automation, and cost-effectiveness**, making it a key technology in modern telecom and cloud computing.
 
-# Sensor Properties & Network Function Virtualization (NFV)
-
-## 36(a) Properties of Sensors: Range, Sensitivity, and Resolution
+### 36(a) Properties of Sensors: Range, Sensitivity, and Resolution
 ### [(CO5)(Analyse/HOCQ)]
 
 Sensors are key components of IoT systems. The most important properties are:
@@ -583,7 +581,7 @@ Higher **sensitivity and resolution** improve precision, while an appropriate **
 
 ---
 
-## 36(b) Advantages of Network Function Virtualization (NFV)
+### 36(b) Advantages of Network Function Virtualization (NFV)
 ### [(CO5)(Remember/LOCQ)]
 
 NFV provides several key benefits:
@@ -599,7 +597,7 @@ NFV **modernizes network infrastructure** and enhances service agility for cloud
 
 ---
 
-## 36(c) Working of NFV (with Block Diagram)
+### 36(c) Working of NFV (with Block Diagram)
 ### [(CO5)(Apply/IOCQ)]
 
 ### **NFV Architecture & Workflow**
@@ -619,3 +617,69 @@ NFV consists of three main components:
 4. **Scaling and optimization are managed automatically.**
 
 NFV enhances **network agility, cost-efficiency, and automation**, making it essential for modern telecom and cloud computing networks.
+
+### 37(a) Advantages and Disadvantages of NFV
+### [(CO5)(Analyse/HOCQ)]
+
+### **Advantages of Network Function Virtualization (NFV):**
+1. **Cost Reduction** – Eliminates the need for dedicated network hardware, reducing CAPEX and OPEX.
+2. **Scalability** – Virtualized functions can be dynamically scaled up or down as needed.
+3. **Flexibility** – Enables rapid deployment of new network services without hardware changes.
+4. **Automation & Orchestration** – Simplifies network management through automated provisioning.
+5. **Energy Efficiency** – Reduces power consumption by running multiple VNFs on shared infrastructure.
+6. **Improved Service Agility** – Faster rollout of new services and network functions.
+
+### **Disadvantages of NFV:**
+1. **Performance Overhead** – Virtualized functions may have slightly lower performance compared to hardware-based solutions.
+2. **Security Concerns** – NFV introduces additional attack vectors due to software vulnerabilities.
+3. **Complex Management** – Requires efficient orchestration and monitoring to ensure smooth operation.
+4. **Integration Challenges** – Legacy network components may not be fully compatible with NFV-based systems.
+5. **Reliability Risks** – A failure in the NFV infrastructure can impact multiple virtualized network functions at once.
+
+---
+
+### 37(b) Steps of IoT Methodology
+### [(CO3)(Remember/LOCQ)]
+
+IoT systems follow a structured methodology for data collection, processing, and action. The key steps are:
+
+1. **Perception Layer (Sensing & Data Collection):**
+   - Sensors and devices collect real-world data (e.g., temperature, motion, humidity).
+2. **Network Layer (Data Transmission):**
+   - Transfers collected data to cloud or edge servers via WiFi, Bluetooth, LPWAN, or cellular networks.
+3. **Edge Computing (Pre-Processing & Filtering):**
+   - Processes raw data at the network edge to reduce latency before sending it to the cloud.
+4. **Cloud Processing & Storage:**
+   - The cloud stores and analyzes the data using AI, ML, or big data analytics.
+5. **Application Layer (User Interaction & Action):**
+   - The processed data is used to trigger actions (e.g., sending alerts, controlling actuators, displaying insights).
+6. **Security & Management:**
+   - Ensures data encryption, authentication, and real-time monitoring to prevent cyber threats.
+
+IoT methodology **enables seamless connectivity, real-time processing, and intelligent decision-making.**
+
+---
+
+### 37(c) NFV Architecture
+### [(CO4)(Apply/IOCQ)]
+
+### **NFV Architecture Overview**
+The NFV architecture consists of three major components:
+
+1. **Virtualized Network Functions (VNFs):**
+   - Software-based implementations of network functions (e.g., routers, firewalls, load balancers).
+2. **NFV Infrastructure (NFVI):**
+   - Provides the compute, storage, and network resources needed to run VNFs.
+3. **NFV Management and Orchestration (NFV-MANO):**
+   - Responsible for the lifecycle management, automation, and orchestration of VNFs.
+
+### **NFV Architecture Block Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/nfvarch.png?raw=true)
+
+### **How NFV Works:**
+1. **Network operators request a virtual function (e.g., firewall, VPN).**
+2. **NFV-MANO assigns resources and deploys the required VNFs.**
+3. **VNFs process network traffic dynamically based on user demands.**
+4. **The system auto-scales, optimizes, and manages resources efficiently.**
+
+NFV **transforms traditional networking by enabling virtualization, automation, and cost reduction.** 
