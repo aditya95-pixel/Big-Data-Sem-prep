@@ -41,10 +41,10 @@
 - (d) Mobile Communication  
 
 ### (vii) IPv4: Internet Protocol version 4 identifies:
-- ✅ **(a) Identifies the devices in the network using hierarchical addressing scheme, total 64 addresses.  
+- ✅ **(a) Identifies the devices in the network using hierarchical addressing scheme, total 64 addresses.**   
 - (b) 128-bit address scheme  
 - (c) Data transfer 250kb/s  
-- (d) None of the above**  
+- (d) None of the above 
 
 ### (viii) CoAP, MQTT, XMPP, DDS are:
 - ✅ **(a) Application Layer Protocol**  
