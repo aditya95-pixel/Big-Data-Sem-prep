@@ -43,6 +43,53 @@
 - ✅ **(b) Connectedness**
 - (c) Speed 
 - (d) Complexity 
+### (viii)	Data can be harnessed by 
+- (a) OLTP and OLAP
+- (b) OLAP and RTAP
+- ✅ **(c) Both (a) and (b)** 
+- (d) None of the Above 
+
+### Module 2
+### (i)Apache Hadoop 	
+- ✅ **(a) Open source software framework for Big Data** 
+- (b) Storage system of Hadoop for Big Data 
+- (c) Programming Model for Big Data 
+- (d) Map Reduce Summarizer for Big data 
+### (ii)Giraph is 	
+- (a) Specialized model for Reduce function 
+- ✅ **(b) Specialized model for graph processing** 
+- (c) Higher level interactivity using storm 
+- (d) None of the above 
+### (iii)HDFS is a 	
+- (a) Application 
+- (b) Map Reduce 
+- ✅ **(c) Distributed file system that runs on clusters.**
+- (d) Non map reduce application 
+### (iv) Streaming Applications are done using 	
+- (a) Star, Spark 
+- (b) Spark, Flink and HDFS
+- ✅ **(c) Both (a) and (b)**
+- (d) None of the above 
+### (v) Pig and Hive are tools 	
+- (a) That simplify programming of Map reduce 
+- (b) Deals with scripts and queries 
+- ✅ **(c) Both (a) and (b)** 
+- (d) None of the above 
+### (vi) Major Phases of MapReduce are  	
+- (a)Mapping ,Reducing,  
+- (b) Shuffling ,Sorting, Combining 
+- ✅ **(c)Mapping , Shuffling , Sorting , Reducing**  
+- (d) Both (a) and (b)
+### (vii)Map Reduce Engine 	
+- (a) Has cluster and slaves 
+- ✅ **(b) Consists Job Tracker and task Tracker** 
+- (c) Keeps the balance 
+- (d) 
+### (viii) MapReduce application end users can run on top of 	
+- (a) YARN without disrupting any processes
+- ✅ **(b) YARN , NextGen YARN**
+- (c) Client 
+- (d) Server 
 
 
 
