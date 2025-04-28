@@ -2,6 +2,50 @@
 
 ## Group A
 
+### Module 1
+
+### (i)Big data is a term for a collection of data set, so large and complex that it becomes difficult to process using 	
+
+- (a) Cloud
+- ✅ **(b) Traditional data processing application**
+- (c) Visualization
+- (d) Unstructured Data 
+
+### (ii)Challenges of Big data faced by IBM are 	
+- (a) 3Es
+- ✅ **(b) 3Vs**
+- (c) 3Os
+- (d) 3Ls
+### (iii)Challenges of Big Data include 	
+- (a) Captute, Curation 
+- (b) Storage ,Search , Sharing 
+- (c) Transfer ,analysis and Visualization 
+- ✅ **(d) All the above** 
+
+### (iv)Earthscope designed to track North America’s geologic evolution reports as 
+- ✅ **(a) Repository** 
+- (b) Source 
+- (c) Process unit 
+- (d) None of the Above 
+### (v)Real Time fast data is generated from 	
+- (a) Social media Networks 
+- (b) Scientific Instruments and mobile Devices 
+- (c) Sensor technology and Networks 
+- ✅ **(d) All the above** 
+
+### (vi)Example of Semi structured data is 	
+- (a) Legacy Data 
+- (b) Web 
+- ✅ **(c) XML**
+- (d) None of the Above 
+### (vii)Valence in Big data corresponds to 	
+- (a) Dimension by data 
+- ✅ **(b) Connectedness**
+- (c) Speed 
+- (d) Complexity 
+
+
+
 ### Module 3
 
 ### (i) Characteristics of IoT are:
