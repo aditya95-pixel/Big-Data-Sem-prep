@@ -143,6 +143,48 @@
 - (c) Session Layer Protocol  
 - (d) Data Link Layer Protocol  
 
+### Module 4
+### (i)It uses HiveQl for data structuring and for writing complicated MapReduce in HDFS	
+- (a) Storm
+- (b) HDFS
+- ✅ **(c) Hive** 
+- (d) Pig 
+### (ii)	Advantages of Hadoop are 
+- (a) Ability to store large amount of data 
+- (b)  high flexibility 
+- ✅ **(c) Both (a) and (b)** 
+- (d) None of the above 
+### (iii)	HBase support 
+- ✅ **(a) random read and writes**
+- (b) write once read many times 
+- (c) Both (a) and (b) 
+- (d) All the above 
+### (iv)	Zookeeper provides services as 
+- (a) Maintaining and configuration of information 
+- (b) Naming and provide distributed synchronization 
+- ✅ **(c) Both (a) and (b)**
+- (d) None of the above.
+### (v)Web Socket API uses 	
+- (a) Client Server 
+- (b) Request response model 
+- ✅ **(c) Exclusive Pair model**
+- (d) None of the above 
+### (vi) Paas is 	
+- (a) Paradigm as a Service
+- (b) Internet Provider as a Service 
+- ✅ **(c) Platform as a Service**
+- (d) None of the above 
+### (vii)	Full duplex communication between client and server takes place in 
+- (a) Stateless/ Stateful
+- (b) Request Response 
+- (c) TCP connections 
+- ✅ **(d) Web Sockets**
+### (viii)	Coordinator nodes collect data from end nodes and send to the 
+- (a) Client
+- ✅ **(b) Server** 
+- (c) Cloud
+- (d) None of the above 
+
 ---
 ### Fill in the blanks
 
