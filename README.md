@@ -1170,6 +1170,7 @@ Group rows by the Category column:
 - Groceries → 60
   
 **Step 2** : Apply Aggregation
+
 SUM
 - Electronics: 100 + 150 = 250
 - Clothing: 80 + 120 = 200
