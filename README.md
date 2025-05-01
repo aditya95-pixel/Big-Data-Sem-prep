@@ -453,6 +453,33 @@ Large file systems face challenges like managing billions of files, ensuring hig
 
 ---
 
+### 6(a) How Do Combiners Work? Explain with a diagram.
+
+**Combiners** are optional components in the **MapReduce** framework that perform **local aggregation** of intermediate map outputs before they are sent across the network to the reducers.
+
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/mapreduce.png?raw=true)
+
+---
+
+### 6(b) Advantages of Combiners
+- **Minimize Data Transfer** : Reduces the amount of data shuffled between Mappers and Reducers.
+- **Improve Performance** : Speeds up MapReduce jobs by decreasing network congestion.
+- **Local Optimization** : Performs computation locally before sending to the reducer.
+- **Effective for Aggregations** : Especially useful in word count, sum, average, and min/max operations.
+- **Better Resource Utilization** : Reduces I/O and network bandwidth usage.
+
+---
+
+### 6(c) Components of MapReduce Architecture
+Component	Description
+1. **Input Data** :	Raw data split into blocks (input splits) and processed in parallel
+2. **Mapper** :	Processes each input split to generate intermediate key-value pairs
+3. **Combiner	(Optional)**: Aggregates mapper output locally before shuffle
+4. **Partitioner** :	Assigns intermediate keys to reducers based on a partitioning logic
+5. **Shuffle & Sort** :	Transfers intermediate data to reducers and sorts by key
+6. **Reducer** :	Aggregates and processes grouped intermediate data to generate final output
+7. **Output Format** :	Writes the final output to HDFS or another file system
+
 ## Group D
 
 
