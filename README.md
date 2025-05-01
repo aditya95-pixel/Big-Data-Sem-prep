@@ -605,8 +605,6 @@ Both **Pair** and **Stripes** approaches are used in **Hadoop MapReduce** for **
 
 ---
 
----
-
 ### 8(c) Describe briefly the components of Map Reduce Architecture.
 
 Component	Description
@@ -752,6 +750,87 @@ Component	Description
 | **Apache Pig**    | High-level platform for data transformation; internally uses MapReduce.    |
 
 ---
+
+### 11(a) Compare the traditional file system from distributed file systems.
+
+| Feature                          | **Traditional File System**                                     | **Distributed File System (DFS)**                             |
+|----------------------------------|------------------------------------------------------------------|----------------------------------------------------------------|
+| **Storage Location**             | Stores data on a **single physical machine**                    | Stores data **across multiple machines** (nodes)               |
+| **Scalability**                  | Limited to the capacity of one system                           | Scales horizontally by adding nodes                           |
+| **Fault Tolerance**              | If the machine fails, data can be lost                          | Uses **replication** to ensure fault tolerance                 |
+| **Performance**                  | Dependent on a single system’s I/O                              | Parallel data access improves performance                     |
+| **Data Sharing**                 | Hard to share across systems                                    | Provides transparent access from multiple systems             |
+| **Examples**                     | NTFS, FAT32, ext3                                               | HDFS (Hadoop), GFS (Google), Ceph                              |
+| **Use Case**                     | Personal computers, small-scale servers                         | Big Data, Cloud Storage, Distributed Computing                 |
+| **Data Access**                  | Accessed locally by the same system                             | Can be accessed by multiple systems over a network             |
+| **Management**                   | Simple file hierarchy and metadata management                   | More complex with block-level metadata and node management     |
+
+---
+
+### 11(b) What do you understand from the Map Reduce Paradigm?
+
+**MapReduce** is a programming model for processing and generating large datasets with a parallel, distributed algorithm on a cluster.
+
+#### Two Main Phases:
+
+1. **Map Phase**:
+   - Input data is split into `<key, value>` pairs.
+   - Each pair is processed independently to produce intermediate `<key, value>` pairs.
+   - Example: Counting words → input: `"cat cat dog"`, output: `("cat", 1), ("cat", 1), ("dog", 1)`
+
+2. **Reduce Phase**:
+   - Intermediate pairs are grouped by key and reduced to a single output per key.
+   - Example: `("cat", [1,1])` → `("cat", 2)`
+
+#### How It Works:
+
+- Input files are divided into chunks and processed in parallel by **mappers**.
+- Intermediate results are **shuffled and sorted**.
+- Results are then processed by **reducers** to generate final output.
+
+--- 
+
+### 11(c) Name the Big data Frameworks and their area of usage.
+
+Big Data workflows rely on multiple categories of tools:
+
+#### Storage Tools
+- **HDFS (Hadoop Distributed File System)**
+- **Amazon S3**
+- **Google Cloud Storage**
+- **MongoDB / Cassandra**
+
+#### Processing & Computation Tools
+- **Apache Spark**
+- **Apache Flink**
+- **Apache Storm**
+- **MapReduce**
+
+#### Querying and Analysis Tools
+- **Apache Hive**
+- **Apache Impala**
+- **Apache Drill**
+- **Presto**
+
+#### Visualization & BI Tools
+- **Tableau**
+- **Power BI**
+- **Apache Superset**
+- **Grafana**
+
+#### Machine Learning & Analytics
+- **Apache Mahout**
+- **MLlib (Spark)**
+- **TensorFlow / PyTorch**
+
+#### Data Ingestion & Orchestration
+- **Apache Kafka**
+- **Apache NiFi**
+- **Apache Airflow**
+- **Apache Sqoop**
+
+---
+
 
 ## Group D
 
