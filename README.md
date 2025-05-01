@@ -281,6 +281,79 @@ Big Data workflows rely on multiple categories of tools:
 
 ---
 
+### 3(a) Compare structured data from unstructured and semi structured data 
+
+| Criteria                | Structured Data                           | Semi-Structured Data                       | Unstructured Data                          |
+|------------------------|--------------------------------------------|--------------------------------------------|---------------------------------------------|
+| **Definition**          | Clearly defined format, stored in tables  | Partial organization with tags/markers     | No predefined format or structure           |
+| **Storage**             | RDBMS (e.g., MySQL, PostgreSQL)            | XML, JSON, NoSQL databases                  | Text files, images, videos, PDFs            |
+| **Schema**              | Fixed schema                               | Flexible schema                             | No schema                                   |
+| **Query Language**      | SQL                                         | XPath, XQuery, custom parsers               | NLP/AI-based parsing or manual methods      |
+| **Examples**            | Employee database, bank records            | XML-based config, JSON APIs                 | Social media posts, photos, audio files     |
+| **Ease of Analysis**    | High (well-structured)                     | Medium (requires parsing)                   | Low (needs complex processing)              |
+
+---
+
+### 3(b) Explain the software stack of Big data.
+
+The Big Data stack is a layered architecture consisting of the following components:
+
+#### 1. **Data Sources**
+- Sensors, Web Logs, Social Media, Mobile Apps, IoT devices
+
+#### 2. **Data Ingestion**
+- **Apache Kafka**, **Apache Flume**, **Apache Sqoop**, **Apache NiFi**
+
+#### 3. **Data Storage**
+- **HDFS (Hadoop Distributed File System)**
+- **Amazon S3**, **Google Cloud Storage**
+- **NoSQL Databases**: HBase, Cassandra, MongoDB
+
+#### 4. **Data Processing**
+- **Batch Processing**: Apache Hadoop (MapReduce), Apache Spark
+- **Stream Processing**: Apache Flink, Apache Storm, Kafka Streams
+
+#### 5. **Data Querying & Analysis**
+- **SQL-on-Hadoop**: Apache Hive, Apache Impala, Presto
+- **Interactive Tools**: Apache Drill
+
+#### 6. **Data Orchestration**
+- **Workflow Management**: Apache Airflow, Apache Oozie
+
+#### 7. **Visualization & BI**
+- **Tableau**, **Power BI**, **Apache Superset**, **Grafana**
+
+---
+
+### 3(c)Describe the physical organization of computer nodes in distributed file systems.
+
+In a distributed file system like HDFS, data is stored across multiple nodes organized into a cluster.
+
+#### Components of a Distributed File System:
+
+- **NameNode (Master)**:
+  - Manages metadata and namespace
+  - Keeps track of file directory structure and block locations
+
+- **DataNodes (Workers)**:
+  - Store actual data blocks
+  - Perform read/write operations as instructed by the NameNode
+
+#### Data Distribution:
+- Files are split into fixed-size blocks (e.g., 128 MB)
+- Each block is replicated (default: 3 copies) across different DataNodes for fault tolerance
+
+#### Node Organization:
+- Nodes are often grouped in **racks**
+- **Rack awareness** policy ensures data is replicated across racks to improve fault tolerance and reduce data loss risk
+- Communication between nodes occurs over a high-speed network (Gigabit or 10G Ethernet)
+
+#### Fault Tolerance:
+- If a DataNode fails, the system uses replicated blocks from other nodes
+- NameNode monitors DataNode health using heartbeat signals
+
+---
+
 ## Group D
 
 
