@@ -91,10 +91,7 @@
 - (c) Client 
 - (d) Server 
 
-
-
 ### Module 3
-
 ### (i) Characteristics of IoT are:
 - (a) Dynamic and Self Adapting  
 - (b) Interoperable communication protocols  
@@ -165,9 +162,9 @@
 - ✅ **(c) Both (a) and (b)**
 - (d) None of the above.
 ### (v)Web Socket API uses 	
-- (a) Client Server 
+- ✅ **(a) Client Server** 
 - (b) Request response model 
-- ✅ **(c) Exclusive Pair model**
+- (c) Exclusive Pair model
 - (d) None of the above 
 ### (vi) Paas is 	
 - (a) Paradigm as a Service
@@ -204,6 +201,85 @@
 14. IoT applications provide an interface that users can use to control and monitor various aspects of **IoT Systems**.
 15. REST services operate over **HTTP**, and each request is independent of each other.
 16. **Apache Spark** is an open-source big data processing framework built around speed, ease of use, and sophisticated analysis, developed at UC Berkeley’s AMP Lab.
+
+## Group B
+
+### 2(a) What do you mean by Big data how is it different from the traditional data ? 
+
+**Big Data** refers to extremely large and complex datasets that cannot be handled by traditional data processing tools. It is typically defined by the **3Vs**:
+
+- **Volume** – Huge amount of data (terabytes to zettabytes)
+- **Velocity** – High speed of data generation and processing
+- **Variety** – Multiple types of data (structured, semi-structured, unstructured)
+
+### Difference Between Big Data and Traditional Data
+
+| Feature             | Traditional Data                         | Big Data                                         |
+|--------------------|-------------------------------------------|--------------------------------------------------|
+| **Volume**         | MBs to GBs                                | TBs to PBs and beyond                            |
+| **Variety**        | Mostly structured                         | Structured, semi-structured, unstructured        |
+| **Velocity**       | Batch processing                          | Real-time or near real-time processing           |
+| **Tools**          | SQL, Excel                                | Hadoop, Spark, NoSQL, Kafka                      |
+| **Storage**        | Centralized databases                     | Distributed file systems (HDFS, S3, etc.)        |
+| **Scalability**    | Vertical (limited)                        | Horizontal (distributed clusters)                |
+
+---
+
+### 2(b) Write all the big data Frameworks. 
+
+Here are popular frameworks used in Big Data:
+
+- **Apache Hadoop**
+- **Apache Spark**
+- **Apache Flink**
+- **Apache Storm**
+- **Apache Kafka**
+- **Apache Hive**
+- **Apache Pig**
+- **HBase**
+
+---
+
+### 2(c) Describe the tools that are required to handle big data.
+
+Big Data workflows rely on multiple categories of tools:
+
+#### Storage Tools
+- **HDFS (Hadoop Distributed File System)**
+- **Amazon S3**
+- **Google Cloud Storage**
+- **MongoDB / Cassandra**
+
+#### Processing & Computation Tools
+- **Apache Spark**
+- **Apache Flink**
+- **Apache Storm**
+- **MapReduce**
+
+#### Querying and Analysis Tools
+- **Apache Hive**
+- **Apache Impala**
+- **Apache Drill**
+- **Presto**
+
+#### Visualization & BI Tools
+- **Tableau**
+- **Power BI**
+- **Apache Superset**
+- **Grafana**
+
+#### Machine Learning & Analytics
+- **Apache Mahout**
+- **MLlib (Spark)**
+- **TensorFlow / PyTorch**
+
+#### Data Ingestion & Orchestration
+- **Apache Kafka**
+- **Apache NiFi**
+- **Apache Airflow**
+- **Apache Sqoop**
+
+---
 
 ## Group D
 
