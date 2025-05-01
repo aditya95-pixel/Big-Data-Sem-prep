@@ -831,6 +831,85 @@ Big Data workflows rely on multiple categories of tools:
 
 ---
 
+### 12(a) What is the Importance of Big Data Analysis?
+
+Big Data Analysis plays a critical role in modern data-driven decision-making across industries. Here's why it's important:
+
+- **Improved Decision Making**: Enables organizations to make more informed, real-time decisions.
+- **Customer Insights**: Helps in understanding customer behavior and preferences.
+- **Cost Efficiency**: Identifies inefficiencies and areas to reduce operational costs.
+- **Innovation**: Drives innovation by revealing hidden patterns and trends.
+- **Operational Efficiency**: Automates and optimizes business processes.
+- **Risk Management**: Detects fraud and security breaches through pattern analysis.
+
+---
+
+### 12(b) Describe Any Distributed File System
+
+#### Hadoop Distributed File System
+
+In a distributed file system like HDFS, data is stored across multiple nodes organized into a cluster.
+
+#### Components of a Distributed File System:
+
+- **NameNode (Master)**:
+  - Manages metadata and namespace
+  - Keeps track of file directory structure and block locations
+
+- **DataNodes (Workers)**:
+  - Store actual data blocks
+  - Perform read/write operations as instructed by the NameNode
+
+#### Data Distribution:
+- Files are split into fixed-size blocks (e.g., 128 MB)
+- Each block is replicated (default: 3 copies) across different DataNodes for fault tolerance
+
+#### Node Organization:
+- Nodes are often grouped in **racks**
+- **Rack awareness** policy ensures data is replicated across racks to improve fault tolerance and reduce data loss risk
+- Communication between nodes occurs over a high-speed network (Gigabit or 10G Ethernet)
+
+#### Fault Tolerance:
+- If a DataNode fails, the system uses replicated blocks from other nodes
+- NameNode monitors DataNode health using heartbeat signals
+
+#### Visual Representation
+
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/Namenode-and-Datanode.png?raw=true)
+
+---
+
+### 12(c) Write the functions of mapper and reducer class.
+
+Below is an example of using Python to simulate MapReduce for computing **word count**:
+
+#### Mapper and Reducer Function
+
+```python
+from collections import defaultdict
+def mapper(text):
+    mapped_output = []
+    for line in text.strip().split("\n"):
+        for word in line.strip().split():
+            mapped_output.append((word.lower(), 1))
+    return mapped_output
+def reducer(mapped_data):
+    reduced_output = defaultdict(int)
+    for word, count in mapped_data:
+        reduced_output[word] += count
+    return dict(reduced_output)
+if __name__ == "__main__":
+    input_text = "big data is big\nbig data is powerful"
+    mapped = mapper(input_text)
+    result = reducer(mapped)
+    print(result)
+```
+
+**Output**
+`{'big': 3, 'data': 2, 'is': 2, 'powerful': 1}`
+
+---
+
 
 ## Group D
 
