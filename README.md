@@ -675,6 +675,84 @@ A Distributed File System (DFS) like HDFS or GFS allows storage and access to da
 
 ---
 
+### 10(a) Difference Between Traditional and Distributed File Systems
+
+| Feature                          | **Traditional File System**                                     | **Distributed File System (DFS)**                             |
+|----------------------------------|------------------------------------------------------------------|----------------------------------------------------------------|
+| **Storage Location**             | Stores data on a **single physical machine**                    | Stores data **across multiple machines** (nodes)               |
+| **Scalability**                  | Limited to the capacity of one system                           | Scales horizontally by adding nodes                           |
+| **Fault Tolerance**              | If the machine fails, data can be lost                          | Uses **replication** to ensure fault tolerance                 |
+| **Performance**                  | Dependent on a single system’s I/O                              | Parallel data access improves performance                     |
+| **Data Sharing**                 | Hard to share across systems                                    | Provides transparent access from multiple systems             |
+| **Examples**                     | NTFS, FAT32, ext3                                               | HDFS (Hadoop), GFS (Google), Ceph                              |
+| **Use Case**                     | Personal computers, small-scale servers                         | Big Data, Cloud Storage, Distributed Computing                 |
+| **Data Access**                  | Accessed locally by the same system                             | Can be accessed by multiple systems over a network             |
+| **Management**                   | Simple file hierarchy and metadata management                   | More complex with block-level metadata and node management     |
+
+---
+
+### 10(b) Write the basic mapper and reducer function for calculating mean.   
+
+```python
+# Mapper Class
+class Mapper:
+    def map(self, values):
+        for value in values:
+            yield ("sum", value)
+            yield ("count", 1)
+
+# Reducer Class
+class Reducer:
+    def reduce(self, mapped_data):
+        result = {"sum": 0, "count": 0}
+        for key, value in mapped_data:
+            result[key] += value
+
+        mean = result["sum"] / result["count"] if result["count"] != 0 else 0
+        return mean
+
+# Example usage
+if __name__ == "__main__":
+    data = [10, 20, 30, 40, 50]
+    mapper = Mapper()
+    reducer = Reducer()
+
+    # Simulate map phase
+    mapped_output = list(mapper.map(data))
+
+    # Group by keys
+    shuffled = {}
+    for key, value in mapped_output:
+        shuffled.setdefault(key, []).append(value)
+
+    # Flatten grouped data for reduce phase
+    flattened = [(k, v) for k, values in shuffled.items() for v in values]
+
+    # Reduce phase
+    mean_result = reducer.reduce(flattened)
+    print("Mean:", mean_result)
+```
+---
+
+### 10(d) Describe briefly the Map-Reduce architecture. Give example of Framework following it.
+
+Component	Description
+1. **Input Data** :	Raw data split into blocks (input splits) and processed in parallel
+2. **Mapper** :	Processes each input split to generate intermediate key-value pairs
+3. **Combiner	(Optional)**: Aggregates mapper output locally before shuffle
+4. **Partitioner** :	Assigns intermediate keys to reducers based on a partitioning logic
+5. **Shuffle & Sort** :	Transfers intermediate data to reducers and sorts by key
+6. **Reducer** :	Aggregates and processes grouped intermediate data to generate final output
+7. **Output Format** :	Writes the final output to HDFS or another file system
+
+| Framework       | Description                                                                 |
+|-----------------|-----------------------------------------------------------------------------|
+| **Apache Hadoop** | The most popular open-source implementation of MapReduce. Uses HDFS + YARN. |
+| **Apache Hive**   | SQL-like querying on large datasets, translates queries into MapReduce jobs. |
+| **Apache Pig**    | High-level platform for data transformation; internally uses MapReduce.    |
+
+---
+
 ## Group D
 
 
