@@ -1304,6 +1304,149 @@ while True:
 
 **Output: Final P contains all reachable (X, Y) pairs**
 
+## 18(a) Given a relation R, partition it’s tuples according to their values .Analyse which aggregation methods are better and explain 2 of them.
+
+Given a relation **R**, we can **partition** tuples by a specific attribute (e.g., category) using **group-by**.
+
+#### Aggregation Methods:
+1. **SUM** – Adds values in each group.
+   - Useful for financial or quantitative data.
+2. **AVG (Average)** – Calculates mean per group.
+   - Ideal for computing average performance, prices, etc.
+
+*Better methods* depend on data type and the question:
+- Use `SUM` for totals (e.g., total sales).
+- Use `AVG` for performance or trends (e.g., average rating).
+
+| Product | Category    | Sales |
+|---------|-------------|-------|
+| A       | Electronics | 100   |
+| B       | Electronics | 150   |
+| C       | Clothing    | 80    |
+| D       | Clothing    | 120   |
+| E       | Groceries   | 60    |
+
+**Step 1**: Group by Category
+Group rows by the Category column:
+- Electronics → 100, 150
+- Clothing → 80, 120
+- Groceries → 60
+  
+**Step 2** : Apply Aggregation
+
+SUM
+- Electronics: 100 + 150 = 250
+- Clothing: 80 + 120 = 200
+- Groceries: 60
+
+AVG
+- Electronics: (100 + 150) / 2 = 125
+- Clothing: (80 + 120) / 2 = 100
+- Groceries: 60 / 1 = 60
+
+| Category    | Total Sales (SUM) | Avg Sales (AVG) |
+|-------------|-------------------|-----------------|
+| Electronics | 250               | 125             |
+| Clothing    | 200               | 100             |
+| Groceries   | 60                | 60              |
+
+---
+
+### 18(b) Discuss the relation algebra operations (a)Union (b) Intersection(c) Difference 
+
+### (a) Union ( ∪ )
+**Definition:**  
+Union combines all tuples from two relations and eliminates duplicates.
+
+**Notation:**  
+R ∪ S
+
+**Conditions for Union:**
+- Both relations must be **union-compatible**:
+  - Same number of attributes (columns).
+  - Corresponding attributes have the same domain.
+
+**Example:**  
+To get a list of all students from two different campuses:  
+`Student_CampusA ∪ Student_CampusB`
+
+**Result:**  
+All unique students from both campuses.
+
+---
+
+### (b) Intersection ( ∩ )
+**Definition:**  
+Intersection retrieves tuples that are **common** to both relations.
+
+**Notation:**  
+R ∩ S
+
+**Conditions for Intersection:**
+- Both relations must be **union-compatible**.
+
+**Example:**  
+To find students enrolled in both Campus A and Campus B:  
+`Student_CampusA ∩ Student_CampusB`
+
+**Result:**  
+Only students present in both relations.
+
+---
+
+### (c) Difference ( − )
+**Definition:**  
+Difference returns tuples that are **in the first relation but not in the second**.
+
+**Notation:**  
+R − S
+
+**Conditions for Difference:**
+- Both relations must be **union-compatible**.
+
+**Example:**  
+To find students enrolled in Campus A but not in Campus B:  
+`Student_CampusA − Student_CampusB`
+
+**Result:**  
+Only students exclusive to Campus A.
+
+### Summary Table
+
+| Operation     | Symbol | Result                                     |
+|---------------|--------|--------------------------------------------|
+| Union         | ∪      | All unique tuples from both R and S        |
+| Intersection  | ∩      | Tuples common to both R and S              |
+| Difference    | −      | Tuples in R that are not in S              |
+
+---
+
+### 18(c)Explain grouping and aggregation by Map-Reduce where there is one grouping attribute and one aggregation where Map will perform the grouping and Reduce does the aggregation.
+
+Example:
+Sales data: (Region, Revenue)
+
+Map Phase:
+Input: (Region, Revenue)
+
+Emit: key = Region, value = Revenue
+
+#### Mapper output
+- ("North", 100)
+- ("South", 200)
+- ("North", 150)
+#### Reduce Phase:
+- Key: Region
+- Values: List of Revenue
+- Aggregate (e.g., SUM):
+#### Reducer computes:
+- North → 100 + 150 = 250
+- South → 200
+#### Final Output:
+- ("North", 250)
+- ("South", 200)
+
+---
 
 ## Group D
 
