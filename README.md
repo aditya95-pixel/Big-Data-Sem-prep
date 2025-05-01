@@ -356,6 +356,64 @@ In a distributed file system like HDFS, data is stored across multiple nodes org
 ![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/Namenode-and-Datanode.png?raw=true)
 ---
 
+### 4(a) Compare the role of different Distributed File Systems .
+
+| Distributed File System | Role & Features                                                                 | Use Cases                                   |
+|-------------------------|----------------------------------------------------------------------------------|---------------------------------------------|
+| **HDFS (Hadoop DFS)**   | Fault-tolerant, block-based storage system designed for large-scale batch data   | Hadoop ecosystem, Big Data analytics        |
+| **Google File System (GFS)** | Proprietary system by Google, fault-tolerant, optimized for Google's workload | Web indexing, Search engine backend         |
+| **Amazon S3**           | Object-based storage with scalability, durability, and pay-as-you-go pricing     | Cloud backups, Web hosting, Data lakes      |
+| **Azure Data Lake Storage** | Optimized for analytics workloads with hierarchical namespace                 | Azure Big Data solutions                    |
+
+---
+
+### 4(b) How Are Large File System Organizations Dealt?
+
+Large file systems face challenges like managing billions of files, ensuring high availability, and handling large file sizes. The following strategies are used:
+
+#### Strategies to Handle Large File Systems:
+
+- **Block-Based Storage**: Files are split into fixed-size blocks (e.g., 64MB or 128MB in HDFS) for distributed storage.
+- **Replication**: Blocks are replicated across nodes to ensure fault tolerance and high availability.
+- **Metadata Management**: A centralized or distributed metadata service (e.g., NameNode in HDFS) keeps track of file locations and structure.
+- **Namespace Scaling**: Use of partitioned namespaces or hierarchical file structures to manage large directories efficiently.
+- **Compression and Encoding**: Reduces storage footprint and increases I/O efficiency.
+- **Striping**: Data is striped across disks or nodes for parallel access and faster read/write operations.
+- **Caching and Buffering**: Frequently accessed files are cached to reduce latency.
+
+---
+
+### 4(c) Explain the Map Reduce Paradigm. How can it be applied?
+
+**MapReduce** is a programming model for processing and generating large datasets with a parallel, distributed algorithm on a cluster.
+
+#### Two Main Phases:
+
+1. **Map Phase**:
+   - Input data is split into `<key, value>` pairs.
+   - Each pair is processed independently to produce intermediate `<key, value>` pairs.
+   - Example: Counting words → input: `"cat cat dog"`, output: `("cat", 1), ("cat", 1), ("dog", 1)`
+
+2. **Reduce Phase**:
+   - Intermediate pairs are grouped by key and reduced to a single output per key.
+   - Example: `("cat", [1,1])` → `("cat", 2)`
+
+#### How It Works:
+
+- Input files are divided into chunks and processed in parallel by **mappers**.
+- Intermediate results are **shuffled and sorted**.
+- Results are then processed by **reducers** to generate final output.
+
+#### Applications of MapReduce:
+
+- **Word Count**: Counting word occurrences in large documents
+- **Log Analysis**: Processing server logs at scale
+- **Inverted Indexing**: Search engine indexing
+- **Data Mining**: Large-scale pattern detection
+- **ETL Pipelines**: Data transformation and loading tasks
+
+---
+
 ## Group D
 
 
