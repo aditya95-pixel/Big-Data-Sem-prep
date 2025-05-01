@@ -982,65 +982,35 @@ Component	Description
 ### 14(b) Give a Numerical Example of Map Reduce Function to generate output Matrix . 
 
 #### Input Matrices
-Consider two matrices:
 
-**Matrix A (2x3):**
-A = [
-[1, 2, 3],
-[4, 5, 6]
-]
+#### Matrix A (2x3)
+A = [ [1, 2, 3], [4, 5, 6] ]
 
-**Matrix B (3x2):**
-B = [
-[7, 8],
-[9, 10],
-[11, 12]
-]
+#### Matrix B (3x2)
+B = [ [7, 8], [9, 10], [11, 12] ]
 
-#### MapReduce Steps
+#### 1. Map Phase
+For each A[i][j], emit key = (i,k) and value = A[i][j]  
+For each B[j][k], emit key = (i,k) and value = B[j][k]  
+→ Combine A and B values with matching keys (i,k)
 
-**1. Map Phase**
-For each element A[i][j], emit (key, value) pairs for all k:
-- Key: (i,k) where k ranges across columns of B
-- Value: (A, j, A[i][j])
+#### 2. Shuffle Phase
+Group values by key (i,k) = output cell position in result matrix C.
 
-For each element B[j][k], emit:
-- Key: (i,k) where i ranges across rows of A
-- Value: (B, j, B[j][k])
+Example for key (0,0):
+A row 0: 1, 2, 3 B col 0: 7, 9, 11
 
-**Example Mapper Output:**
-For A[0][0] = 1
-- ((0,0), ('A', 0, 1)) # Will multiply with B[0][0]
-- ((0,1), ('A', 0, 1)) # Will multiply with B[0][1]
+→ Multiply and sum: 1×7 + 2×9 + 3×11 = 58
 
-For B[1][0] = 9
-- ((0,0), ('B', 1, 9)) # Will multiply with A[0][1]
-- ((1,0), ('B', 1, 9)) # Will multiply with A[1][1])
+#### 3. Reduce Phase
 
-**2. Shuffle Phase**
-Groups values by (i,k) keys:
-- (0,0): [('A',0,1), ('A',1,2), ('A',2,3), ('B',0,7), ('B',1,9), ('B',2,11)]
-- (0,1): [('A',0,1), ('A',1,2), ('A',2,3), ('B',0,8), ('B',1,10), ('B',2,12)]
+For each key (i,k), compute:
+C[i][k] = A[i][0]*B[0][k] + A[i][1]*B[1][k] + A[i][2]*B[2][k]
 
-**3. Reduce Phase**
-For each (i,k), multiply corresponding A and B values and sum:
-- C[i][k] = Σ (A[i][j] * B[j][k]) for all j
-
-**Reducer Calculations:**
-- (0,0): 1 * 7 + 2 * 9 + 3 * 11 = 7 + 18 + 33 = 58
-- (0,1): 1 * 8 + 2 * 10 + 3 * 12 = 8 + 20 + 36 = 64
-- (1,0): 4 * 7 + 5 * 9 + 6 * 11 = 28 + 45 + 66 = 139
-- (1,1): 4 * 8 + 5 * 10 + 6 * 12 = 32 + 50 + 72 = 154
-
-
-**Final Output Matrix (2x2)**
-C = [
-[58, 64],
-[139, 154]
-]
+#### Final Output Matrix C (2x2)
+C = [ [58, 64], [139, 154] ]
 
 ---
-
 ### 14(c) Write a Algorithm for Mapper and Reducer Function for word count.
 
 Below is an example of using Python to simulate MapReduce for computing **word count**:
@@ -1069,6 +1039,100 @@ if __name__ == "__main__":
 
 **Output**
 `{'big': 3, 'data': 2, 'is': 2, 'powerful': 1}`
+
+### 15(a) Compare the role of centralized control  in traditional and distributed databases.
+
+| Aspect                | Traditional Databases               | Distributed Databases               |
+|-----------------------|-------------------------------------|-------------------------------------|
+| **Control Location**  | Single central server               | Decentralized across nodes          |
+| **Decision Making**   | Centralized authority               | Consensus-based or partitioned      |
+| **Failure Impact**    | Single point of failure             | Fault-tolerant (partial failures)   |
+| **Scalability**       | Vertical scaling only               | Horizontal scaling possible         |
+| **Consistency Model** | Strong consistency                 | Eventual consistency common         |
+| **Example**           | MySQL on one server                 | Cassandra cluster                   |
+
+---
+
+### 15(b) Explain Matrix Vector Multiplication by Map Reduce. 
+
+Multiply a matrix **A (m×n)** with a vector **v (n×1)** using the **MapReduce paradigm**.
+
+---
+
+**Input Example**
+- Matrix A (3x3): A = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]
+- Vector v (3x1): v = [1, 2, 3]
+
+#### 1. **Map Phase**
+For each element A[i][j], emit:
+Key: i Value: A[i][j] * v[j]
+
+**Mapper Output Example**:
+- A[0][0] * v[0] = 1 * 1 → emit (0, 1)
+- A[0][1] * v[1] = 2 * 2 → emit (0, 4)
+- A[0][2] * v[2] = 3 * 3 → emit (0, 9)
+- A[1][0] * v[0] = 4 * 1 → emit (1, 4)
+
+### 2. **Shuffle Phase**
+Group values by key (row index):
+Key: 0 → [1, 4, 9] Key: 1 → [4, 10, 18] Key: 2 → [7, 16, 27]
+
+### 3. **Reduce Phase**
+Sum the values for each key to get the dot product of row i and vector v.
+
+**Reducer Output**:
+- Row 0: 1 + 4 + 9 = 14
+- Row 1: 4 + 10 + 18 = 32
+- Row 2: 7 + 16 + 27 = 50
+
+---
+
+#### Final Output Vector (3x1)
+[ 14, 32, 50 ]
+
+---
+
+### 15(c) Explain how Google Page Ranking Algorithm works.
+
+**PageRank** is an algorithm used by Google Search to rank web pages in their search engine results. It measures the importance of each page based on the number and quality of links to it.
+
+- A web page is important **if it is linked to by many other important pages**.
+- Not all links are equal — links from highly ranked pages carry more weight.
+
+#### How It Works
+
+1. **Start** with all pages having the same initial rank.
+2. For each page, distribute its PageRank equally among all the pages it links to.
+3. Update each page’s rank based on incoming links.
+4. Repeat the process until the values converge (stabilize).
+
+#### PageRank Formula
+
+For a page `P`:
+
+PR(P) = (1 - d)/N + d * (PR(P1)/L(P1) + PR(P2)/L(P2) + ... + PR(Pn)/L(Pn))
+
+Where:
+- `PR(P)` = PageRank of page P  
+- `d` = damping factor (typically 0.85)  
+- `N` = total number of pages  
+- `P1...Pn` = pages linking to P  
+- `L(Pi)` = number of outbound links on page Pi  
+
+
+**Damping Factor**
+
+- The damping factor **d** simulates a random user clicking on links.
+- A value of 0.85 means there's an **85% chance** the user clicks a link and **15% chance** they jump to any random page.
+
+#### Applications
+
+- Web search engines  
+- Social network analysis  
+- Citation networks  
+- Recommendation systems
+
+
 
 ## Group D
 
