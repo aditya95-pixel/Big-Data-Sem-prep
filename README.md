@@ -1192,11 +1192,11 @@ AVG
 ### 16(c) Find the paths of length two in the Web using the relation Links in the Fig below.
  
 | From |	To |
-|------|-----|
-| url1 |	url2 |
-| url1 |	url3 |
-| url2 |	url3 |
-| url2 | url4 |
+|------|-----------|
+| url1 |      url2 |
+| url1 |      url3 |
+| url2 |      url3 |
+| url2 |      url4 |
 		Fig1: Relation Links having set of pairs of URL’s 
 
 #### Objective:
