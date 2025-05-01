@@ -414,6 +414,45 @@ Large file systems face challenges like managing billions of files, ensuring hig
 
 ---
 
+### 5(a) Comparison: Role of HDFS, YARN, and HBase
+
+| Component | Full Form                          | Role in Hadoop Ecosystem                                                                 |
+|-----------|------------------------------------|-------------------------------------------------------------------------------------------|
+| **HDFS**  | Hadoop Distributed File System     | A distributed storage system that stores large files across multiple machines. It ensures fault tolerance, scalability, and high throughput for large data sets. |
+| **YARN**  | Yet Another Resource Negotiator    | Acts as the **resource manager** of Hadoop. It allocates system resources and schedules jobs among applications. Enables multi-tenancy and scalability. |
+| **HBase** | Hadoop Database                    | A **NoSQL, column-oriented** distributed database that runs on top of HDFS. It supports random, real-time read/write access to large datasets. |
+
+---
+
+### 5(b) Functions of Combiners
+
+**Combiners** are mini-reducers used in the **MapReduce** framework to optimize performance by minimizing data transfer between the Map and Reduce phases.
+
+#### Key Functions:
+- Operate **after the Map phase** and **before the Reduce phase**.
+- Perform **local aggregation** of intermediate outputs.
+- Reduce the volume of data that is shuffled and sorted across the network.
+- Useful for operations like **sum**, **count**, **min**, **max**, etc.
+
+> Example: In a word count task, a combiner can sum word counts locally on each mapper before sending to the reducer.
+
+---
+
+### 5(c) Comparison Parameters: SQL vs NoSQL
+
+| Parameter             | SQL (Relational DBs)                  | NoSQL (Non-Relational DBs)                    |
+|-----------------------|----------------------------------------|-----------------------------------------------|
+| **Data Model**        | Tabular (rows and columns)             | Key-Value, Document, Column-Family, Graph     |
+| **Schema**            | Fixed, predefined schema               | Dynamic, flexible schema                      |
+| **Scalability**       | Vertical (scale-up)                    | Horizontal (scale-out)                        |
+| **Transactions**      | ACID compliant                         | BASE properties (eventual consistency)        |
+| **Examples**          | MySQL, PostgreSQL, Oracle              | MongoDB, Cassandra, Redis           |
+| **Best For**          | Structured data, complex joins         | Unstructured/semi-structured data, large scale |
+| **Query Language**    | SQL (Structured Query Language)        | Varies: JSON-based queries, APIs              |
+| **Data Integrity**    | High                                    | Depends on DB type and configuration          |
+
+---
+
 ## Group D
 
 
