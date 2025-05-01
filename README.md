@@ -593,9 +593,17 @@ Both **Pair** and **Stripes** approaches are used in **Hadoop MapReduce** for **
 
 ### 8(b) Explain the function of Combiners. 
 
-**Combiners** are optional components in the **MapReduce** framework that perform **local aggregation** of intermediate map outputs before they are sent across the network to the reducers.
+**Combiners** are mini-reducers used in the **MapReduce** framework to optimize performance by minimizing data transfer between the Map and Reduce phases.
 
-![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/mapreduce.png?raw=true)
+#### Key Functions:
+- Operate **after the Map phase** and **before the Reduce phase**.
+- Perform **local aggregation** of intermediate outputs.
+- Reduce the volume of data that is shuffled and sorted across the network.
+- Useful for operations like **sum**, **count**, **min**, **max**, etc.
+
+> Example: In a word count task, a combiner can sum word counts locally on each mapper before sending to the reducer.
+
+---
 
 ---
 
