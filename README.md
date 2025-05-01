@@ -1448,6 +1448,85 @@ Emit: key = Region, value = Revenue
 
 ---
 
+### 19(a) Find shortest path Algorithm using Map reduce.
+
+#### Assumptions:
+- Graph is stored as adjacency list with weights.
+- Initial distances are set to ∞ (infinity), except the **source node** which is 0.
+
+
+#### MapReduce Approach
+
+**Step 1: Data Format**
+
+Each line in the graph file:
+```text
+NodeID    Distance    AdjacencyList
+------------------------------------
+A    	     0    	B:3,C:1
+B    	     ∞    	C:1,D:7
+C    	     ∞    	D:1
+D    	     ∞    	-
+```
+
+```python
+def mapper(node_id, value):
+    # value: (distance, adjacency_list)
+    distance, adjacency = value
+
+    # Emit the node as-is
+    emit(node_id, (distance, adjacency))
+
+    # Emit distances to neighbors
+    for neighbor, weight in adjacency:
+        new_distance = distance + weight
+        emit(neighbor, new_distance)
+def reducer(node_id, values):
+    min_distance = ∞
+    adjacency = []
+
+    for val in values:
+        if is_adjacency_list(val):
+            adjacency = val
+        else:
+            min_distance = min(min_distance, val)
+
+    emit(node_id, (min_distance, adjacency))
+
+```
+---
+
+### 19(b) Write a simple Map Reduce Algorithm Design.
+
+Below is an example of using Python to simulate MapReduce for computing **word count**:
+
+#### Mapper and Reducer Function
+
+```python
+from collections import defaultdict
+def mapper(text):
+    mapped_output = []
+    for line in text.strip().split("\n"):
+        for word in line.strip().split():
+            mapped_output.append((word.lower(), 1))
+    return mapped_output
+def reducer(mapped_data):
+    reduced_output = defaultdict(int)
+    for word, count in mapped_data:
+        reduced_output[word] += count
+    return dict(reduced_output)
+if __name__ == "__main__":
+    input_text = "big data is big\nbig data is powerful"
+    mapped = mapper(input_text)
+    result = reducer(mapped)
+    print(result)
+```
+
+**Output**
+`{'big': 3, 'data': 2, 'is': 2, 'powerful': 1}`
+
+---
+
 ## Group D
 
 
