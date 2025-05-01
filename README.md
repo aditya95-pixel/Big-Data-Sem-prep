@@ -620,6 +620,61 @@ Component	Description
 
 --- 
 
+### 9(a) Compare the role of Mapper and Reducer function .
+
+| Feature              | **Mapper**                                                    | **Reducer**                                                  |
+|----------------------|---------------------------------------------------------------|--------------------------------------------------------------|
+| **Position in Flow** | Executes first, processes input data                          | Executes after Shuffle & Sort, processes intermediate data   |
+| **Input**            | Raw input split (e.g., lines of text, key-value records)      | Grouped key and list of associated values                    |
+| **Output**           | Intermediate key-value pairs                                  | Final output key-value pairs                                 |
+| **Purpose**          | Transforms and filters raw data                               | Aggregates and summarizes intermediate data                  |
+| **Parallelism**      | Highly parallel (1 per input split)                           | Limited by number of output keys                             |
+| **Examples**         | Tokenizing, Filtering, Preprocessing                          | Counting, Summing, Reducing lists of values                  |
+| **Stateless/Stateful**| Typically stateless                                          | Can perform stateful aggregation                             |
+
+---
+
+### 9(b) What are the tasks for which Mapper and Reducer classes can be written? Give an Example.
+
+#### Typical Use Cases
+
+| Task                          | Mapper Role                                      | Reducer Role                                       |
+|-------------------------------|--------------------------------------------------|----------------------------------------------------|
+| **Word Count**                | Emits each word with count `1`                  | Sums counts for each word                          |
+| **Sorting**                   | Emits sortable key-value pairs                   | Aggregates or formats sorted keys                  |
+| **Inverted Indexing**         | Emits (word, documentID)                         | Aggregates document IDs per word                   |
+| **Log Analysis**              | Emits (IP, 1) or (StatusCode, 1)                 | Counts occurrences of IPs or status codes          |
+| **Join Operations**           | Emits key and source-tagged value from both sets | Merges/join records based on key                   |
+
+#### Word Count Example:
+
+```python
+# Mapper emits:
+("apple", 1)
+("banana", 1)
+("apple", 1)
+
+# Reducer receives:
+("apple", [1, 1]) → ("apple", 2)
+("banana", [1])   → ("banana", 1)
+```
+
+### 9(c) Describe briefly the functions Distributed file systems.
+
+A Distributed File System (DFS) like HDFS or GFS allows storage and access to data across multiple machines as if it were on a single file system.
+
+#### Key Functions:
+
+- **Data Distribution** : Splits large files into blocks and distributes across nodes.
+- **Fault Tolerance** : Replicates data blocks across multiple nodes to avoid data loss.
+- **Scalability** : Easily scaled horizontally by adding more nodes.
+- **High Availability** : Ensures data is accessible even if some nodes fail.
+- **Parallel Access** : Multiple clients can read/write data concurrently.
+- **Metadata Management** : Maintains a namespace and file-to-block mapping via a central master (e.g., NameNode in HDFS).
+- **Security and Access Control** : Manages user permissions, authentication, and secure access.
+
+---
+
 ## Group D
 
 
