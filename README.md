@@ -961,6 +961,115 @@ if __name__ == "__main__":
 
 ---
 
+## Group C
+
+### 14(a) Explain Map Reduce and It’s Phases with the help of a Block Diagram . 	
+
+Component	Description
+1. **Input Data** :	Raw data split into blocks (input splits) and processed in parallel
+2. **Mapper** :	Processes each input split to generate intermediate key-value pairs
+3. **Combiner	(Optional)**: Aggregates mapper output locally before shuffle
+4. **Shuffle & Sort** :	Transfers intermediate data to reducers and sorts by key
+5. **Reducer** :	Aggregates and processes grouped intermediate data to generate final output
+6. **Output Format** :	Writes the final output to HDFS or another file system
+
+**Block Diagram**
+
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/mapreduce.png?raw=true)
+
+---
+
+### 14(b) Give a Numerical Example of Map Reduce Function to generate output Matrix . 
+
+#### Input Matrices
+Consider two matrices:
+
+**Matrix A (2x3):**
+A = [
+[1, 2, 3],
+[4, 5, 6]
+]
+
+**Matrix B (3x2):**
+B = [
+[7, 8],
+[9, 10],
+[11, 12]
+]
+
+#### MapReduce Steps
+
+**1. Map Phase**
+For each element A[i][j], emit (key, value) pairs for all k:
+- Key: (i,k) where k ranges across columns of B
+- Value: (A, j, A[i][j])
+
+For each element B[j][k], emit:
+- Key: (i,k) where i ranges across rows of A
+- Value: (B, j, B[j][k])
+
+**Example Mapper Output:**
+For A[0][0] = 1
+- ((0,0), ('A', 0, 1)) # Will multiply with B[0][0]
+- ((0,1), ('A', 0, 1)) # Will multiply with B[0][1]
+
+For B[1][0] = 9
+- ((0,0), ('B', 1, 9)) # Will multiply with A[0][1]
+- ((1,0), ('B', 1, 9)) # Will multiply with A[1][1])
+
+**2. Shuffle Phase**
+Groups values by (i,k) keys:
+- (0,0): [('A',0,1), ('A',1,2), ('A',2,3), ('B',0,7), ('B',1,9), ('B',2,11)]
+- (0,1): [('A',0,1), ('A',1,2), ('A',2,3), ('B',0,8), ('B',1,10), ('B',2,12)]
+
+**3. Reduce Phase**
+For each (i,k), multiply corresponding A and B values and sum:
+- C[i][k] = Σ (A[i][j] * B[j][k]) for all j
+
+**Reducer Calculations:**
+- (0,0): 1 * 7 + 2 * 9 + 3 * 11 = 7 + 18 + 33 = 58
+- (0,1): 1 * 8 + 2 * 10 + 3 * 12 = 8 + 20 + 36 = 64
+- (1,0): 4 * 7 + 5 * 9 + 6 * 11 = 28 + 45 + 66 = 139
+- (1,1): 4 * 8 + 5 * 10 + 6 * 12 = 32 + 50 + 72 = 154
+
+
+**Final Output Matrix (2x2)**
+C = [
+[58, 64],
+[139, 154]
+]
+
+---
+
+### 14(c) Write a Algorithm for Mapper and Reducer Function for word count.
+
+Below is an example of using Python to simulate MapReduce for computing **word count**:
+
+#### Mapper and Reducer Function
+
+```python
+from collections import defaultdict
+def mapper(text):
+    mapped_output = []
+    for line in text.strip().split("\n"):
+        for word in line.strip().split():
+            mapped_output.append((word.lower(), 1))
+    return mapped_output
+def reducer(mapped_data):
+    reduced_output = defaultdict(int)
+    for word, count in mapped_data:
+        reduced_output[word] += count
+    return dict(reduced_output)
+if __name__ == "__main__":
+    input_text = "big data is big\nbig data is powerful"
+    mapped = mapper(input_text)
+    result = reducer(mapped)
+    print(result)
+```
+
+**Output**
+`{'big': 3, 'data': 2, 'is': 2, 'powerful': 1}`
+
 ## Group D
 
 
