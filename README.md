@@ -1132,6 +1132,115 @@ Where:
 - Citation networks  
 - Recommendation systems
 
+### 16(a) Compare the role of relational algebra operations Selection and Projection .
+
+| Operation   | Description                                                                 | Result                             |
+|-------------|-----------------------------------------------------------------------------|------------------------------------|
+| **Selection (σ)** | Filters rows based on a given predicate (condition).                       | Subset of rows                     |
+| **Projection (π)** | Extracts specific columns (attributes) from a relation, removing duplicates. | Subset of columns  |
+
+---
+
+### 16(b) Given a relation R, partition it’s tuples according to their values .Analyse which aggregation methods are better and explain 2 of them. 
+
+Given a relation **R**, we can **partition** tuples by a specific attribute (e.g., category) using **group-by**.
+
+#### Aggregation Methods:
+1. **SUM** – Adds values in each group.
+   - Useful for financial or quantitative data.
+2. **AVG (Average)** – Calculates mean per group.
+   - Ideal for computing average performance, prices, etc.
+
+*Better methods* depend on data type and the question:
+- Use `SUM` for totals (e.g., total sales).
+- Use `AVG` for performance or trends (e.g., average rating).
+
+| Product | Category    | Sales |
+|---------|-------------|-------|
+| A       | Electronics | 100   |
+| B       | Electronics | 150   |
+| C       | Clothing    | 80    |
+| D       | Clothing    | 120   |
+| E       | Groceries   | 60    |
+
+**Step 1**: Group by Category
+Group rows by the Category column:
+- Electronics → 100, 150
+- Clothing → 80, 120
+- Groceries → 60
+  
+**Step 2** : Apply Aggregation
+SUM
+- Electronics: 100 + 150 = 250
+- Clothing: 80 + 120 = 200
+- Groceries: 60
+
+AVG
+- Electronics: (100 + 150) / 2 = 125
+- Clothing: (80 + 120) / 2 = 100
+- Groceries: 60 / 1 = 60
+
+| Category    | Total Sales (SUM) | Avg Sales (AVG) |
+|-------------|-------------------|-----------------|
+| Electronics | 250               | 125             |
+| Clothing    | 200               | 100             |
+| Groceries   | 60                | 60              |
+
+---
+
+### 16(c) Find the paths of length two in the Web using the relation Links in the Fig below.
+ 
+| From |	To |
+|------|-----|
+| url1 |	url2 |
+| url1 |	url3 |
+| url2 |	url3 |
+| url2 | url4 |
+		Fig1: Relation Links having set of pairs of URL’s 
+
+#### Objective:
+Find all `(A, C)` such that:  
+`A → B → C`  
+(i.e., 2 hops)
+
+#### Join:
+Perform a **self join** on `Links(A, B)` and `Links(B, C)`:
+
+```text
+A       B       C
+---------------------
+url1    url2    url3
+url1    url2    url4
+```
+
+Output Paths of Length 2:
+- (url1, url3)
+- (url1, url4)
+
+### 16(d)Explain grouping and aggregation by Map-Reduce where there is one grouping attribute and one aggregation, where Map will perform the grouping and Reduce does the aggregation.
+
+Example:
+Sales data: (Region, Revenue)
+
+Map Phase:
+Input: (Region, Revenue)
+
+Emit: key = Region, value = Revenue
+
+#### Mapper output
+- ("North", 100)
+- ("South", 200)
+- ("North", 150)
+#### Reduce Phase:
+- Key: Region
+- Values: List of Revenue
+- Aggregate (e.g., SUM):
+#### Reducer computes:
+- North → 100 + 150 = 250
+- South → 200
+#### Final Output:
+- ("North", 250)
+- ("South", 200)
 
 
 ## Group D
