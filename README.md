@@ -352,6 +352,8 @@ In a distributed file system like HDFS, data is stored across multiple nodes org
 - If a DataNode fails, the system uses replicated blocks from other nodes
 - NameNode monitors DataNode health using heartbeat signals
 
+#### Visual Representation
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/Namenode-and-Datanode.png?raw=true)
 ---
 
 ## Group D
