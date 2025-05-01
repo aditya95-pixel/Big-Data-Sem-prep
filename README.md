@@ -480,6 +480,96 @@ Component	Description
 6. **Reducer** :	Aggregates and processes grouped intermediate data to generate final output
 7. **Output Format** :	Writes the final output to HDFS or another file system
 
+### 7(a) Briefly explain the method to find relative frequency and cumulative relative frequency using numerical example .
+
+#### Definitions:
+- **Relative Frequency**: Frequency of a value divided by total number of values.
+- **Cumulative Relative Frequency**: Running total of relative frequencies up to a certain point.
+
+### Example:
+
+| Value | Frequency |
+|-------|-----------|
+| 10    | 2         |
+| 20    | 3         |
+| 30    | 5         |
+
+**Step 1: Total Frequency** = 2 + 3 + 5 = 10
+
+**Step 2: Calculate Relative Frequency**
+
+| Value | Frequency | Relative Frequency (f/N) |
+|-------|-----------|---------------------------|
+| 10    | 2         | 2/10 = 0.2                 |
+| 20    | 3         | 3/10 = 0.3                 |
+| 30    | 5         | 5/10 = 0.5                 |
+
+**Step 3: Cumulative Relative Frequency**
+
+| Value | Cumulative Relative Frequency |
+|-------|-------------------------------|
+| 10    | 0.2                           |
+| 20    | 0.2 + 0.3 = 0.5               |
+| 30    | 0.5 + 0.5 = 1.0               |
+
+---
+
+### 7(b) What is Relative Frequency?
+
+**Relative Frequency** is the ratio of the number of times a specific value occurs to the total number of observations.
+
+#### Formula:
+**Relative Frequency = Frequency of a value / Total number of values**
+
+#### Example:
+If a value appears **4 times** in a dataset of **20 values**, its relative frequency is:
+
+**Relative Frequency = 4 / 20 = 0.2**
+
+---
+
+### 7(c) Compute the Mean using the Mapper class and Reducer Class .
+```python
+# Mapper Class
+class Mapper:
+    def map(self, values):
+        for value in values:
+            yield ("sum", value)
+            yield ("count", 1)
+
+# Reducer Class
+class Reducer:
+    def reduce(self, mapped_data):
+        result = {"sum": 0, "count": 0}
+        for key, value in mapped_data:
+            result[key] += value
+
+        mean = result["sum"] / result["count"] if result["count"] != 0 else 0
+        return mean
+
+# Example usage
+if __name__ == "__main__":
+    data = [10, 20, 30, 40, 50]
+    mapper = Mapper()
+    reducer = Reducer()
+
+    # Simulate map phase
+    mapped_output = list(mapper.map(data))
+
+    # Group by keys
+    shuffled = {}
+    for key, value in mapped_output:
+        shuffled.setdefault(key, []).append(value)
+
+    # Flatten grouped data for reduce phase
+    flattened = [(k, v) for k, values in shuffled.items() for v in values]
+
+    # Reduce phase
+    mean_result = reducer.reduce(flattened)
+    print("Mean:", mean_result)
+```
+---
+
 ## Group D
 
 
