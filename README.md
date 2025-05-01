@@ -1527,6 +1527,71 @@ if __name__ == "__main__":
 
 ---
 
+### 20(a)Compare and analyse the role of Map function and reduce Function .
+
+| Feature              | **Mapper**                                                    | **Reducer**                                                  |
+|----------------------|---------------------------------------------------------------|--------------------------------------------------------------|
+| **Position in Flow** | Executes first, processes input data                          | Executes after Shuffle & Sort, processes intermediate data   |
+| **Input**            | Raw input split (e.g., lines of text, key-value records)      | Grouped key and list of associated values                    |
+| **Output**           | Intermediate key-value pairs                                  | Final output key-value pairs                                 |
+| **Purpose**          | Transforms and filters raw data                               | Aggregates and summarizes intermediate data                  |
+| **Parallelism**      | Highly parallel (1 per input split)                           | Limited by number of output keys                             |
+| **Examples**         | Tokenizing, Filtering, Preprocessing                          | Counting, Summing, Reducing lists of values                  |
+| **Stateless/Stateful**| Typically stateless                                          | Can perform stateful aggregation                             |
+
+---
+### 20(b) Discuss relational algebra operation:  Grouping and aggregation  
+#### Definition
+**Grouping and Aggregation** are extended (non-basic) operations in **relational algebra** used to compute summary statistics on groups of tuples.
+
+#### Syntax
+```text
+G⟨grouping_attributes⟩  g⟨aggregate_function(attribute)⟩ (Relation)
+```
+
+- `G` : Group-by operator.
+- `grouping_attributes` : List of attributes to group by.
+- `g` : Aggregation (like SUM, COUNT, AVG, MAX, MIN).
+
+Relation: Input relation (table).
+
+Example Relation: Employee
+
+| emp_id | dept | salary |
+|--------|------|--------|
+| 1	 | HR	| 50000  |
+| 2	 | IT	| 60000  |
+| 3	 | HR	| 55000  |
+| 4	 | IT	| 70000  |
+
+Example Query
+
+Find the average salary per department:
+- G⟨dept⟩ g⟨AVG(salary)⟩ (Employee)
+
+Result:
+
+```text
+dept	AVG(salary)
+HR	52500
+IT	65000
+```
+
+**Common Aggregation Functions**
+```text
+Function	Description
+COUNT	Counts the number of tuples
+SUM	Adds up the values of an attribute
+AVG	Calculates average value
+MAX	Finds maximum value
+MIN	Finds minimum value
+```
+
+**Key Notes**
+-Grouping helps summarize large data sets based on categories.
+- Not part of classical relational algebra — it is an extended operator.
+- Supported in SQL as GROUP BY.
+
 ## Group D
 
 
