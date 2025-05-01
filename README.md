@@ -1243,6 +1243,67 @@ Emit: key = Region, value = Revenue
 - ("North", 250)
 - ("South", 200)
 
+### 17(a) Discuss the relational –algebra operations (a) Selection (b) Projection
+#### (a) Selection (σ)
+**Definition:**  
+Selection is a unary operation in relational algebra that retrieves tuples (rows) from a relation (table) that satisfy a given predicate (condition).
+
+**Notation:**  
+σ<sub>condition</sub>(Relation)
+
+**Example:**  
+To select employees with salary greater than 50,000:  
+σ<sub>salary > 50000</sub>(Employee)
+
+**Properties:**
+- Does not change the number of attributes (columns).
+- Reduces the number of tuples (rows).
+
+---
+
+### (b) Projection (π)
+**Definition:**  
+Projection is a unary operation that retrieves specific columns from a relation, eliminating duplicates.
+
+**Notation:**  
+π<sub>attribute_list</sub>(Relation)
+
+**Example:**  
+To retrieve only the names and salaries of employees:  
+π<sub>name, salary</sub>(Employee)
+
+**Properties:**
+- Reduces the number of attributes (columns).
+- Removes duplicate rows automatically (since relations are sets).
+
+---
+
+### Q17(b) A directed graph whose arcs are represented by the relation E(X,Y), We wish to compute the paths relation  P(X,Y),where there is a path of length 1 or more from node X to node Y . Write down a simple recursive algorithm to Map-Reduce.
+
+**Problem:**  
+Given a directed graph with edges represented by the relation `E(X, Y)`, compute the paths relation `P(X, Y)` such that there is a path from node `X` to node `Y` of length ≥ 1.
+
+**Recursive Algorithm using MapReduce:**
+
+```python
+P = E
+while True:
+    # Join P with E to find new paths (P1)
+    P1 = {(x, z) for (x, y1) in P for (y2, z) in E if y1 == y2}
+
+    # Union of previous paths and new paths
+    P_new = P.union(P1)
+
+    # If no new paths were added, break
+    if P_new == P:
+        break
+
+    # Update P with new paths
+    P = P_new
+```
+
+**Output: Final P contains all reachable (X, Y) pairs**
+
 
 ## Group D
 
