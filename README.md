@@ -910,6 +910,56 @@ if __name__ == "__main__":
 
 ---
 
+### 13(a) What is the role of distributed file systems in terms of processing Big Data ?
+
+Distributed File Systems play a **critical role** in enabling the storage, management, and processing of Big Data:
+
+| Functionality                  | Role in Big Data Processing                                                                 |
+|-------------------------------|----------------------------------------------------------------------------------------------|
+| **Data Distribution**         | Splits large datasets into smaller blocks and stores them across multiple nodes.            |
+| **Fault Tolerance**           | Automatically replicates data blocks to prevent data loss due to hardware failure.          |
+| **Scalability**               | Can scale horizontally by adding more nodes to accommodate growing data volumes.           |
+| **Parallel Processing**       | Supports parallel data access and computation (e.g., with MapReduce, Spark, etc.).          |
+| **High Throughput**           | Optimized for large batch operations and streaming data access.                            |
+| **Data Locality Optimization**| Moves computation closer to where the data resides to reduce network overhead.              |
+| **Integration with Ecosystems**| Seamlessly integrates with processing frameworks like Hadoop, Spark, Hive, etc.            |
+
+---
+
+### 13(b) Explain Combiners. Design a basic Map Reduce Algorithm.
+
+**Combiners** are optional components in the **MapReduce** framework that perform **local aggregation** of intermediate map outputs before they are sent across the network to the reducers.
+
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/mapreduce.png?raw=true)
+
+Below is an example of using Python to simulate MapReduce for computing **word count**:
+
+#### Mapper and Reducer Function
+
+```python
+from collections import defaultdict
+def mapper(text):
+    mapped_output = []
+    for line in text.strip().split("\n"):
+        for word in line.strip().split():
+            mapped_output.append((word.lower(), 1))
+    return mapped_output
+def reducer(mapped_data):
+    reduced_output = defaultdict(int)
+    for word, count in mapped_data:
+        reduced_output[word] += count
+    return dict(reduced_output)
+if __name__ == "__main__":
+    input_text = "big data is big\nbig data is powerful"
+    mapped = mapper(input_text)
+    result = reducer(mapped)
+    print(result)
+```
+
+**Output**
+`{'big': 3, 'data': 2, 'is': 2, 'powerful': 1}`
+
+---
 
 ## Group D
 
