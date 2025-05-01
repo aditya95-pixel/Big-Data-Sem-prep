@@ -570,6 +570,48 @@ if __name__ == "__main__":
 ```
 ---
 
+### 8(a) Compare the role of Pair and Strips . Which framework are they associated?
+
+#### Associated Framework:
+Both **Pair** and **Stripes** approaches are used in **Hadoop MapReduce** for **co-occurrence matrix computation**, especially in Natural Language Processing (NLP) and text mining tasks.
+
+---
+
+#### Comparison Table
+
+| Aspect                  | **Pair Approach**                                      | **Stripes Approach**                                   |
+|-------------------------|--------------------------------------------------------|--------------------------------------------------------|
+| **Key Format**          | Uses a **composite key** like `(word1, word2)`         | Uses a **single key** like `word1`, value is a hashmap |
+| **Emitted Data Size**   | More key-value pairs (e.g., one for every pair)         | Fewer pairs; emits one map (dictionary) per word       |
+| **Efficiency**          | Higher shuffle and sort cost due to more key-value pairs | More efficient for frequent words (lower network I/O) |
+| **Memory Usage**        | Low — no need to store hashmaps                         | Higher — maintains an in-memory hashmap                |
+| **Reducer Complexity**  | Simple, since input keys are already granular           | Complex — needs to merge dictionaries                  |
+| **Example Output**      | `(word1, word2) → 1`                                    | `word1 → {word2: count, word3: count}`                 |
+| **Use Case**            | Suitable when memory is constrained                     | Suitable when memory is sufficient for aggregation     |
+
+---
+
+### 8(b) Explain the function of Combiners. 
+
+**Combiners** are optional components in the **MapReduce** framework that perform **local aggregation** of intermediate map outputs before they are sent across the network to the reducers.
+
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/mapreduce.png?raw=true)
+
+---
+
+### 8(c) Describe briefly the components of Map Reduce Architecture.
+
+Component	Description
+1. **Input Data** :	Raw data split into blocks (input splits) and processed in parallel
+2. **Mapper** :	Processes each input split to generate intermediate key-value pairs
+3. **Combiner	(Optional)**: Aggregates mapper output locally before shuffle
+4. **Partitioner** :	Assigns intermediate keys to reducers based on a partitioning logic
+5. **Shuffle & Sort** :	Transfers intermediate data to reducers and sorts by key
+6. **Reducer** :	Aggregates and processes grouped intermediate data to generate final output
+7. **Output Format** :	Writes the final output to HDFS or another file system
+
+--- 
+
 ## Group D
 
 
