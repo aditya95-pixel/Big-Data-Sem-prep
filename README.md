@@ -2152,13 +2152,13 @@ Several IoT-based home automation solutions are widely used for smart living. So
 ### 30(c) Describe in 2 lines applications of City automation that can be done under the Domain of IoT.
 ### [(CO5,CO6)(Apply/IOCQ)]
 
-a) **Smart Parking**: make the search for parking space easier and convenient for drivers.Smart parking are powered by IoT systems that detect the no. of empty parking slots
+- **Smart Parking**: make the search for parking space easier and convenient for drivers.Smart parking are powered by IoT systems that detect the no. of empty parking slots
 and send information over internet to smart application backends.
-b) **Smart Lighting**: for roads, parks and buildings can help in saving energy.
-c) **Smart Roads**: Equipped with sensors can provide information on driving condition, travel time estimating and alert in case of poor driving conditions, traffic condition and accidents.
-d) **Structural Health Monitoring**: uses a network of sensors to monitor the vibration levels in the structures such as bridges and buildings.
-e) **Surveillance**: The video feeds from surveillance cameras can be aggregated in cloud based scalable storage solution.
-f) **Emergency Response**: IoT systems for fire detection, gas and water leakage detection can help in generating alerts and minimizing their effects on the critical infrastructures.
+- **Smart Lighting**: for roads, parks and buildings can help in saving energy.
+- **Smart Roads**: Equipped with sensors can provide information on driving condition, travel time estimating and alert in case of poor driving conditions, traffic condition and accidents.
+- **Structural Health Monitoring**: uses a network of sensors to monitor the vibration levels in the structures such as bridges and buildings.
+- **Surveillance**: The video feeds from surveillance cameras can be aggregated in cloud based scalable storage solution.
+- **Emergency Response**: IoT systems for fire detection, gas and water leakage detection can help in generating alerts and minimizing their effects on the critical infrastructures.
 
 ### 31(a) Compare the role of Air pollution monitoring and Noise Pollution Monitoring system under the environment category of IoT Domain .
 ### [(CO5)(Analyse/HOCQ)]
