@@ -1788,7 +1788,7 @@ We wish to compute the paths relation P(X, Y), meaning that there is a path of l
 of E. A simple recursive algorithm to do so is:
 1. Start with P(X, Y ) = E(X, Y).
 2. While changes to the relation P occur, add to P all tuples in    
-   $\pi_{X,Y} \left(P(X, Z) \bowtie P(Z, Y)\right)$
+   πX,Y (P(X, Z) ⨝ P(Z, Y))
 
 That is, find pairs of nodes X and Y such that for some node Z there is known to be a path from X to Z and also a known path from Z to Y.
 
