@@ -1592,8 +1592,244 @@ MIN	Finds minimum value
 - Not part of classical relational algebra — it is an extended operator.
 - Supported in SQL as GROUP BY.
 
-## Group D
+### 21(a) How can we perform Computation in Pregel ?
+### [(CO3)((Analyse/HOCQ)]
+Steps to Perform Computation in Pregel
+1. **Initialization**
 
+Each vertex is initialized with:
+
+- A unique **vertex ID**.
+- A mutable **value** (state).
+- A set of **outgoing edges** to neighbors.
+
+2. **Vertex Computation (Per Superstep)**
+
+**Input:** Messages received during the previous superstep.
+**Processing Example (Python-like pseudocode):**
+
+```python
+def Compute(messages):
+    # Update vertex state using received messages
+    for message in messages:
+        self.value = process_message(message)
+    
+    # Send messages to other vertices
+    send_message_to(destination_vertex, message_data)
+    
+    # Optionally halt if no further work is needed
+    if should_halt():
+        vote_to_halt()
+```
+**3. Message Passing**
+
+- Messages are sent **asynchronously**.
+- Messages are **delivered at the next superstep**.
+
+**Example:**
+- Vertex A sends a message to Vertex B during **Superstep S**.
+- Vertex B receives and processes the message during **Superstep S+1**.
+**4. Termination**
+The algorithm stops when:
+- **All vertices** have voted to halt.
+- **No pending messages** remain in the system.
+
+---
+**Example:** Single-Source Shortest Path (SSSP)
+
+1. Initialization
+
+- The **source vertex** sets `distance = 0`.
+- **All other vertices** set `distance = ∞`.
+Superstep 1 - The source sends initial distances to its neighbors.
+2. Subsequent Supersteps
+Each vertex:
+- Updates its distance if a **shorter path** is received.
+- **Halts** if no shorter path is found.
+
+3. Termination
+- The algorithm ends when **no more distance updates** occur.
+
+**Use Cases**
+1.Graph Algorithms
+
+- **PageRank**
+- **Connected Components**
+- **Clustering**
+
+2. Distributed Machine Learning
+
+### 21(b) Differentiate between map function and reduce function.
+| Feature             | Map Function                                     | Reduce Function                                    |
+|---------------------|--------------------------------------------------|----------------------------------------------------|
+| **Purpose**          | Transforms input data into intermediate key-value pairs | Aggregates intermediate data into final output      |
+| **Input**            | Raw data (e.g., lines of a file, records)       | Key-value pairs from Map output                    |
+| **Output**           | Key-value pairs                                 | Reduced key and aggregated value                   |
+| **Operation Type**   | Element-wise processing                         | Group-wise aggregation                             |
+| **Execution Style**  | Parallelizable per element                      | Parallelizable per key                             |
+| **Example Task**     | Tokenizing lines into words                     | Counting frequency of each word                    |
+| **Typical Use Case** | Data preprocessing, filtering, or transformation| Summarization, statistics, consolidation           |
+
+### 22(a) What is Pregel and how does it manage failures when implementing recursive algorithms on a computing cluster ?
+**Pregel** is a **vertex-centric programming model** developed by Google for **large-scale graph processing** in **distributed systems**. It is designed to efficiently run graph algorithms—especially iterative and recursive ones—across a cluster of machines, using a model called **Bulk Synchronous Parallel (BSP)**.
+- **Vertex-centric**: Computation revolves around vertices; each vertex runs the same user-defined `compute()` function.
+- **Message passing**: Vertices communicate by sending and receiving messages in discrete **supersteps**.
+- **Bulk Synchronous Parallel**: Each superstep includes:
+  1. Receiving messages from the previous superstep.
+  2. Updating the vertex state.
+  3. Sending messages to other vertices for the next superstep.
+  4. Optionally voting to halt.
+Pregel is built to run on large clusters, where **failures are expected**. It handles failures using a **checkpointing mechanism**:
+
+| Mechanism            | Description                                                                 |
+|----------------------|-----------------------------------------------------------------------------|
+| **Checkpointing**     | Periodically, the system saves the state of all vertices and messages to disk. |
+| **Failure Detection** | If a machine fails, the system restarts the computation **from the last checkpoint**, not from scratch. |
+| **Deterministic Execution** | Since supersteps are deterministic, re-running a failed portion will produce the same result. |
+| **Master Node**       | Oversees worker nodes and restarts failed workers or reassigns their workload. |
+
+**Recursive Algorithm Implementation in Pregel**
+
+Recursive or iterative graph algorithms (like BFS, PageRank, or SSSP) naturally map to Pregel’s superstep model:
+
+- **Each recursion level** is handled by one **superstep**.
+- **State propagation** and convergence occur via message passing.
+- **Termination** is decided when no vertex is active and no message is in transit.
+- **Graph-based learning algorithms**
+### 22(b) Think matrix as a relation M with row number column number and value. So M(I,J,V) with tuples (i,j,mij), N(J,K,W) with tuples (j,k,njk).Perform grouping and aggregation with Map and Reduce function.
+Matrix Multiplication using MapReduce.
+Given two matrices:
+- Matrix M: Represented as tuples `(i, j, mij)` where `i` is row, `j` is column, `mij` is value
+- Matrix N: Represented as tuples `(j, k, njk)` where `j` is row, `k` is column, `njk` is value
+
+We want to compute the product P = M × N where each element `pik = Σ(mij * njk)` for all j
+**MapReduce Solution**
+
+**1. Map Phase**
+
+**Mapper for Matrix M:**
+```python
+def map_M(input_tuple):
+    i, j, mij = input_tuple
+    # Emit (j) as key to join with N
+    for k in all_possible_k_values:
+        yield (j, ('M', i, k, mij))
+```
+**2. Shuffle Phase** 
+```python
+(j, [('M', i1, k1, m_val), ('N', i2, k2, n_val), ...])
+```
+**3. Reduce Phase**
+**Reducer**
+```python
+def reduce(j, values):
+    # Separate M and N values
+    M_values = [v for v in values if v[0] == 'M']
+    N_values = [v for v in values if v[0] == 'N']
+    
+    # Compute products for matching i,k pairs
+    for (_, i, _, mij) in M_values:
+        for (_, _, k, njk) in N_values:
+            yield (i, k, mij * njk)
+```
+**4. Final Aggregation**
+A second MapReduce job performs the final aggregation to sum the partial products computed in the previous reduce phase.
+**Final Mapper**
+```python
+def final_map(input_tuple):
+    i, k, product = input_tuple
+    yield ((i, k), product)
+```
+**Final Reducer**
+```python
+def final_reduce(key, values):
+    i, k = key
+    yield (i, k, sum(values))
+```
+
+### 23(a) How are today’s surveillance system controlling using the wireless Video Camera Networks ?
+Wireless Video Camera Networks (WVCNs) are used to manage surveillance systems by enabling video feeds from cameras to be transmitted wirelessly, offering flexibility and scalability. Here's a concise breakdown of how they work:
+
+**1. Wireless Communication**
+WVCNs rely on wireless technologies like Wi-Fi, 5G, or mesh networks to transmit video data from cameras to monitoring stations without the need for cabling.
+
+**2. Camera Control**
+Cameras can be remotely controlled using Pan-Tilt-Zoom (PTZ) functions or through AI-driven automation that tracks movement or detects specific activities, reducing the need for constant human intervention.
+
+**3. Data Transmission**
+Video feeds are sent via real-time streaming protocols (RTSP) to central servers or cloud storage. These systems support live video streaming, playback, and even AI-based processing like facial or object recognition.
+
+**4. Centralized Monitoring**
+Control is often centralized through a Network Video Recorder (NVR) or cloud platform where footage is monitored and stored. Edge computing can also be used to process data locally, reducing bandwidth and enhancing real-time analysis.
+
+**5. Security**
+Encryption, authentication, and secure communication protocols ensure that video data remains protected. This is especially important in large systems where data privacy and access control are critical.
+
+**6. AI Integration**
+AI enhances surveillance by enabling features like automatic tracking, event detection, and facial recognition. This can automate many tasks that would traditionally require human intervention.
+
+### 23(b) What is the purpose of Communication cost Model?  
+The role of Communication Cost Model are:
+**1. Evaluate Performance:**
+It helps determine how much time or resources are consumed in sending and receiving data, which can significantly impact the total runtime of a parallel algorithm.
+
+**2. Optimize Algorithms:**
+By understanding the communication cost, developers can design algorithms that minimize data transfer, leading to more efficient execution on distributed systems.
+
+**3. Compare Architectures:**
+Communication cost models allow performance comparisons across different hardware setups, such as multi-core CPUs, clusters, or GPUs.
+
+**4. Guide Scheduling and Partitioning:**
+Helps in deciding how to split data and tasks among nodes to reduce the cost of communication and balance computational loads.
+
+### 23(c) Write a simple recursive algorithm to compute the path P(X,Y)  from node X and Node Y in a directed graph.
+Suppose we have a directed graph whose arcs are represented by the relation E(X, Y ), meaning that there is an arc from node X to node Y.  
+We wish to compute the paths relation P(X, Y), meaning that there is a path of length 1 or more from node X to node Y. That is, P is the transitive closure  
+of E. A simple recursive algorithm to do so is:
+1. Start with P(X, Y ) = E(X, Y).
+2. While changes to the relation P occur, add to P all tuples in    
+   $\pi_{X,Y} \left(P(X, Z) \bowtie P(Z, Y)\right)$
+
+That is, find pairs of nodes X and Y such that for some node Z there is known to be a path from X to Z and also a known path from Z to Y.
+
+### 24(a) What are the future scope of wireless video camera networks in surveillance systems? [First part answered in 23(a)]
+The future scope of wireless video camera networks in surveillance systems is significant, driven by advances in connectivity, artificial intelligence, and edge computing. Some key developments include:
+
+1. AI-Powered Analytics: Integration of machine learning for real-time facial recognition, anomaly detection, and behavior prediction will make surveillance more proactive and intelligent.
+2. Edge Computing: Processing video data closer to the source (at the edge) will reduce latency, improve response times, and reduce bandwidth usage.
+3. 5G and Beyond: High-speed, low-latency wireless communication (like 5G/6G) will enable faster and more reliable video streaming, even in remote or mobile surveillance setups (e.g., drones, vehicles).
+4. IoT and Smart City Integration: Wireless cameras will increasingly become part of larger IoT ecosystems, contributing to smart city infrastructure for traffic monitoring, public safety, and environmental sensing.
+
+### 24(b) What are the parameters required for sending video data captured from the CCTV cameras connected in a cluster?
+The parameters fall into different categories:
+1. Network & Transmission Parameters
+-IP Address / MAC Address of each camera
+-Bandwidth availability (upload/download capacity)
+-Transmission Protocol (e.g., RTP, RTSP, HTTP, MQTT)
+-Latency and jitter tolerance
+-Packet Loss Rate tolerance
+-Encoding Protocol (e.g., H.264, H.265)
+-Port numbers used for streaming and control
+
+2.Camera Configuration Parameters
+-Frame Rate (e.g., 30 fps, 60 fps)
+-Resolution (e.g., 1080p, 4K)
+-Bitrate (constant or variable)
+-Compression method
+-Camera ID or Stream Tag for identification in the cluster
+
+3. Security Parameters
+-Authentication Credentials (username/password or token)
+-Encryption Protocols (e.g., TLS/SSL, SRTP)
+-Firewall/NAT configurations (if remote access is involved)
+
+4. Cluster Management Parameters
+-Master-Slave Configuration or peer-to-peer protocol
+-Load balancing strategy (to avoid overload)
+-Time synchronization (e.g., NTP)
+-Failover/Recovery setup
+
+### 25(a) Explain with an example the communication complexity /cost of communication of Distributed Computing cluster by equality function.
 
 ### 26(a) Function of Management in IoT Systems
 ### [(CO4)(Analyse/HOCQ)]
