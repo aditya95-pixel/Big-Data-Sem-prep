@@ -1606,7 +1606,8 @@ Each vertex is initialized with:
 2. **Vertex Computation (Per Superstep)**
 
 **Input:** Messages received during the previous superstep.
-**Processing Example (Python-like pseudocode):**
+
+**Processing Example:**
 
 ```python
 def Compute(messages):
@@ -1629,6 +1630,7 @@ def Compute(messages):
 **Example:**
 - Vertex A sends a message to Vertex B during **Superstep S**.
 - Vertex B receives and processes the message during **Superstep S+1**.
+  
 **4. Termination**
 The algorithm stops when:
 - **All vertices** have voted to halt.
@@ -1651,6 +1653,7 @@ Each vertex:
 - The algorithm ends when **no more distance updates** occur.
 
 **Use Cases**
+
 1.Graph Algorithms
 
 - **PageRank**
@@ -1660,15 +1663,17 @@ Each vertex:
 2. Distributed Machine Learning
 
 ### 21(b) Differentiate between map function and reduce function.
-| Feature             | Map Function                                     | Reduce Function                                    |
-|---------------------|--------------------------------------------------|----------------------------------------------------|
-| **Purpose**          | Transforms input data into intermediate key-value pairs | Aggregates intermediate data into final output      |
-| **Input**            | Raw data (e.g., lines of a file, records)       | Key-value pairs from Map output                    |
-| **Output**           | Key-value pairs                                 | Reduced key and aggregated value                   |
-| **Operation Type**   | Element-wise processing                         | Group-wise aggregation                             |
-| **Execution Style**  | Parallelizable per element                      | Parallelizable per key                             |
-| **Example Task**     | Tokenizing lines into words                     | Counting frequency of each word                    |
-| **Typical Use Case** | Data preprocessing, filtering, or transformation| Summarization, statistics, consolidation           |
+| Feature              | **Mapper**                                                    | **Reducer**                                                  |
+|----------------------|---------------------------------------------------------------|--------------------------------------------------------------|
+| **Position in Flow** | Executes first, processes input data                          | Executes after Shuffle & Sort, processes intermediate data   |
+| **Input**            | Raw input split (e.g., lines of text, key-value records)      | Grouped key and list of associated values                    |
+| **Output**           | Intermediate key-value pairs                                  | Final output key-value pairs                                 |
+| **Purpose**          | Transforms and filters raw data                               | Aggregates and summarizes intermediate data                  |
+| **Parallelism**      | Highly parallel (1 per input split)                           | Limited by number of output keys                             |
+| **Examples**         | Tokenizing, Filtering, Preprocessing                          | Counting, Summing, Reducing lists of values                  |
+| **Stateless/Stateful**| Typically stateless                                          | Can perform stateful aggregation                             |
+
+---
 
 ### 22(a) What is Pregel and how does it manage failures when implementing recursive algorithms on a computing cluster ?
 **Pregel** is a **vertex-centric programming model** developed by Google for **large-scale graph processing** in **distributed systems**. It is designed to efficiently run graph algorithms—especially iterative and recursive ones—across a cluster of machines, using a model called **Bulk Synchronous Parallel (BSP)**.
@@ -1679,6 +1684,7 @@ Each vertex:
   2. Updating the vertex state.
   3. Sending messages to other vertices for the next superstep.
   4. Optionally voting to halt.
+  
 Pregel is built to run on large clusters, where **failures are expected**. It handles failures using a **checkpointing mechanism**:
 
 | Mechanism            | Description                                                                 |
@@ -1696,6 +1702,7 @@ Recursive or iterative graph algorithms (like BFS, PageRank, or SSSP) naturally 
 - **State propagation** and convergence occur via message passing.
 - **Termination** is decided when no vertex is active and no message is in transit.
 - **Graph-based learning algorithms**
+  
 ### 22(b) Think matrix as a relation M with row number column number and value. So M(I,J,V) with tuples (i,j,mij), N(J,K,W) with tuples (j,k,njk).Perform grouping and aggregation with Map and Reduce function.
 Matrix Multiplication using MapReduce.
 Given two matrices:
@@ -1770,6 +1777,7 @@ AI enhances surveillance by enabling features like automatic tracking, event det
 
 ### 23(b) What is the purpose of Communication cost Model?  
 The role of Communication Cost Model are:
+
 **1. Evaluate Performance:**
 It helps determine how much time or resources are consumed in sending and receiving data, which can significantly impact the total runtime of a parallel algorithm.
 
@@ -1788,10 +1796,63 @@ We wish to compute the paths relation P(X, Y), meaning that there is a path of l
 of E. A simple recursive algorithm to do so is:
 1. Start with P(X, Y ) = E(X, Y).
 2. While changes to the relation P occur, add to P all tuples in    
-   πX,Y (P(X, Z) ⨝ P(Z, Y))
+   π <sub>X,Y</sub> (P(X, Z) ⨝ P(Z, Y))
 
 That is, find pairs of nodes X and Y such that for some node Z there is known to be a path from X to Z and also a known path from Z to Y.
 
+### 23(d)Think matrix as a relation M with row number column number and value.So M(I,J,V) with tuples (i,j,mij), N(J,K,W) with tuples (j,k,njk).Perform grouping and aggregation with Map and Reduce function .
+
+Matrix Multiplication using MapReduce.
+Given two matrices:
+- Matrix M: Represented as tuples `(i, j, mij)` where `i` is row, `j` is column, `mij` is value
+- Matrix N: Represented as tuples `(j, k, njk)` where `j` is row, `k` is column, `njk` is value
+
+We want to compute the product P = M × N where each element `pik = Σ(mij * njk)` for all j
+**MapReduce Solution**
+
+**1. Map Phase**
+
+**Mapper for Matrix M:**
+```python
+def map_M(input_tuple):
+    i, j, mij = input_tuple
+    # Emit (j) as key to join with N
+    for k in all_possible_k_values:
+        yield (j, ('M', i, k, mij))
+```
+**2. Shuffle Phase** 
+```python
+(j, [('M', i1, k1, m_val), ('N', i2, k2, n_val), ...])
+```
+**3. Reduce Phase**
+**Reducer**
+```python
+def reduce(j, values):
+    # Separate M and N values
+    M_values = [v for v in values if v[0] == 'M']
+    N_values = [v for v in values if v[0] == 'N']
+    
+    # Compute products for matching i,k pairs
+    for (_, i, _, mij) in M_values:
+        for (_, _, k, njk) in N_values:
+            yield (i, k, mij * njk)
+```
+**4. Final Aggregation**
+A second MapReduce job performs the final aggregation to sum the partial products computed in the previous reduce phase.
+**Final Mapper**
+```python
+def final_map(input_tuple):
+    i, k, product = input_tuple
+    yield ((i, k), product)
+```
+**Final Reducer**
+```python
+def final_reduce(key, values):
+    i, k = key
+    yield (i, k, sum(values))
+```
+
+---
 ### 24(a) What are the future scope of wireless video camera networks in surveillance systems? [First part answered in 23(a)]
 The future scope of wireless video camera networks in surveillance systems is significant, driven by advances in connectivity, artificial intelligence, and edge computing. Some key developments include:
 
