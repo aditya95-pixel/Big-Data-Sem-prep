@@ -1892,7 +1892,10 @@ The parameters fall into different categories:
 
 ### 25(a) Explain with an example the communication complexity /cost of communication of Distributed Computing cluster by equality function.
 
-### 26(a) Function of Management in IoT Systems
+
+## Group D
+
+### 26(a) What is the function of management in IoT systems ? 
 ### [(CO4)(Analyse/HOCQ)]
 
 In IoT systems, **management functions** play a crucial role in ensuring efficient operation, security, and scalability. The key functions include:
@@ -1908,7 +1911,7 @@ Efficient IoT management ensures **seamless connectivity, improved performance, 
 
 ---
 
-### 26(b) Role of Subscribers in the Publish-Subscribe Model
+### 26(b) What is the role of subscribers in the Publish –Subscribe model?   
 ### [(CO6)(Remember/LOCQ)]
 
 In the **Publish-Subscribe (Pub-Sub) Model**, **subscribers** play a vital role in receiving relevant data. Their key roles include:
@@ -1921,9 +1924,12 @@ In the **Publish-Subscribe (Pub-Sub) Model**, **subscribers** play a vital role 
 
 Subscribers enable **efficient, scalable, and flexible communication in IoT and distributed systems** by reducing direct dependencies between components.
 
+### **Pub-Sub Model Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/publish-subscribe.png?raw=true)
+
 ---
 
-### 26(c) Functions of Queues in Push-Pull Communication Model
+### 26(c)Describe briefly the functions of queues for the messages in Push Pull Communication Model.
 ### [(CO6)(Apply/IOCQ)]
 
 In the **Push-Pull Communication Model**, **message queues** manage data flow between producers and consumers. Their primary functions include:
@@ -1937,9 +1943,12 @@ In the **Push-Pull Communication Model**, **message queues** manage data flow be
 
 This model is widely used in **distributed systems, cloud services, and IoT networks** to improve communication reliability and efficiency.
 
+### **Push-Pull Communication Model Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/push-pull.png?raw=true)
+
 ---
 
-### 27(a) Comparison of REST-Based Communication APIs vs. WebSocket-Based Communication APIs
+### 27(a) Analyse by comparing the role of REST based communication APIs from Web Socket based Communication API .
 ### [(CO6)(Analyse/HOCQ)]
 
 | Feature                | REST-Based Communication API | WebSocket-Based Communication API |
@@ -1951,14 +1960,15 @@ This model is widely used in **distributed systems, cloud services, and IoT netw
 | **Best Use Case**      | Suitable for standard web applications (e.g., RESTful APIs) | Ideal for real-time applications (e.g., chat, gaming, stock updates) |
 | **Scalability**       | Scales well with caching and load balancing | Requires persistent connections, may increase resource consumption |
 
-### Key Analysis:
-- **REST is best for request-response interactions**, while **WebSockets are optimal for real-time bidirectional communication**.
-- **WebSockets reduce latency and bandwidth** but require **more resources** to maintain persistent connections.
-- REST is widely used in **web services and IoT APIs**, while WebSockets are better for **real-time IoT applications** like smart home automation and live monitoring.
+### **REST-Based Communication APIs Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/REST.png?raw=true)
+
+### **WebSocket-Based Communication APIs Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/Web-Socket-API.png?raw=true)
 
 ---
 
-### 27(b) Exclusive Pair Communication Model
+### 27(b) Explain the Exclusive Pair communication model.
 ### [(CO6)(Remember/LOCQ)]
 
 The **Exclusive Pair Communication Model** is a **one-to-one communication mechanism** where two devices establish a **direct and persistent** connection. 
@@ -1972,9 +1982,12 @@ The **Exclusive Pair Communication Model** is a **one-to-one communication mecha
 
 This model is **best suited for IoT applications where data privacy, reliability, and low latency are critical**.
 
+### **Exclusive Pair communication model Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/Exclusive-Pair.png?raw=true)
+
 ---
 
-### 27(c) Applications of IoT Enabling Technologies
+### 27(c) Name few applications of IoT Enabling Technologies are used.
 ### [(CO5)(Apply/IOCQ)]
 
 Several technologies enable IoT applications across industries. Some key applications include:
@@ -1986,7 +1999,7 @@ Several technologies enable IoT applications across industries. Some key applica
 5. **Transportation & Logistics** - Connected vehicles, GPS tracking, and fleet management.
 6. **Retail & Customer Experience** - Smart shelves, personalized shopping experiences, and automated checkout systems.
 
-These applications leverage IoT technologies like **RFID, Cloud Computing, Edge AI, 5G, and Blockchain** to improve efficiency, automation, and connectivity.
+These applications use IoT technologies like **RFID, Cloud Computing, Edge AI, 5G, and Blockchain** to improve efficiency, automation, and connectivity.
 
 ---
 
@@ -2002,13 +2015,9 @@ These applications leverage IoT technologies like **RFID, Cloud Computing, Edge 
 | **Target Users**      | IT administrators, system architects needing custom infrastructure. | Developers focusing on building and deploying applications. |
 | **Examples**         | AWS EC2, Google Compute Engine, Microsoft Azure Virtual Machines. | Google App Engine, AWS Elastic Beanstalk, Microsoft Azure App Services. |
 
-### Key Analysis:
-- **IaaS is best for users who need full control over their infrastructure**, while **PaaS is ideal for developers who want a ready-to-use development platform**.
-- **IaaS requires more configuration**, whereas **PaaS simplifies development with pre-configured tools**.
-
 ---
 
-### 28(b) Cloud Computing Services Offered to Users
+### 28(b) What are the cloud computing services offered to the users in a cloud computing environment?   
 ### [(CO6)(Remember/LOCQ)]
 
 Cloud computing offers various services categorized into the following:
@@ -2024,7 +2033,7 @@ These services help users **reduce infrastructure costs, increase scalability, a
 
 ---
 
-### 28(c) Characteristics of Big Data
+### 28(c) Big data is generated from machine sensor data collected from sensors , health and fitness data , what are the underlying characteristic of Big data ?
 ### [(CO5)(Analyse/IOCQ)]
 
 Big Data is characterized by the **5Vs**:
@@ -2034,8 +2043,6 @@ Big Data is characterized by the **5Vs**:
 3. **Variety** - Data comes in multiple formats: structured (databases), semi-structured (JSON, XML), and unstructured (videos, images, logs).
 4. **Veracity** - Ensures data accuracy and reliability, as sensor data may contain noise or inconsistencies.
 5. **Value** - Extracting meaningful insights and patterns to drive decision-making and innovations.
-
-Big Data technologies process and analyze **massive datasets** to improve efficiency in **healthcare, IoT, predictive maintenance, and AI applications**.
 
 ---
 
@@ -2066,9 +2073,12 @@ IoT systems typically follow a **four-stage architecture**, ensuring seamless da
 
 Each stage works together to create an efficient **end-to-end IoT ecosystem**, ensuring real-time monitoring, automation, and decision-making.
 
+### **IoT architecture system Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/iot-arch.jpg?raw=true)
+
 ---
 
-### 29(b) Suitable System for Low-Cost, Low-Complexity Solutions
+### 29(b) Give a suitable system for modelling low cost and low complexity solutions where the data involved is not big and analysis requirement are not computationally intensive like that of Home automation / Smart irrigation. 
 ### [(CO5)(Apply/IOCQ)]
 
 For **low-cost and low-complexity IoT applications** like **home automation and smart irrigation**, a suitable system should have:
@@ -2078,7 +2088,7 @@ For **low-cost and low-complexity IoT applications** like **home automation and 
 - **LoRa / Zigbee / Wi-Fi** for low-power wireless communication.
 
 ### **2. Lightweight Data Processing**
-- **Edge computing** using **Raspberry Pi** or ESP32 to process small datasets.
+- **Edge computing** using **Raspberry Pi** to process small datasets.
 - **No need for heavy cloud computing**; simple **local storage (SD card) or Firebase** is sufficient.
 
 ### **3. Energy-Efficient and Cost-Effective Sensors**
@@ -2097,9 +2107,12 @@ For **low-cost and low-complexity IoT applications** like **home automation and 
 
 By utilizing **low-power microcontrollers, edge computing, and efficient sensors**, such solutions offer an optimal balance between **cost, power consumption, and performance**.
 
+### **Smart Irrigation system Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/smart-irrigation.png?raw=true)
+
 ---
 
-### 30(a) IoT System for Noise Monitoring
+### 30(a) Explain an IoT system for Noise Monitoring .
 ### [(CO5)(Analyse/HOCQ)]
 
 An IoT-based noise monitoring system is designed to detect and analyze noise levels in different environments, such as **urban areas, industries, and residential zones**. 
@@ -2117,9 +2130,12 @@ An IoT-based noise monitoring system is designed to detect and analyze noise lev
 - If noise levels exceed a predefined limit, **alerts are sent to authorities or users**.
 - The system can be used for **pollution monitoring, workplace safety, and smart city initiatives**.
 
+### **Noise Monitoring system Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/noise.png?raw=true)
+
 ---
 
-### 30(b) IoT-Specific Home Automation Systems
+### 30(b) Name few Home Automation used which are specific to IoTs. 
 ### [(CO5,CO6)(Remember/LOCQ)]
 
 Several IoT-based home automation solutions are widely used for smart living. Some of the key systems include:
@@ -2133,15 +2149,18 @@ Several IoT-based home automation solutions are widely used for smart living. So
 
 ---
 
-### 30(c) IoT-Based City Automation Applications
+### 30(c) Describe in 2 lines applications of City automation that can be done under the Domain of IoT.
 ### [(CO5,CO6)(Apply/IOCQ)]
 
-1. **Smart Traffic Management** - IoT sensors and AI optimize traffic flow, reducing congestion and improving transportation efficiency.
-2. **Smart Waste Management** - IoT-enabled trash bins send fill-level data to optimize waste collection routes, reducing operational costs.
+a) **Smart Parking**: make the search for parking space easier and convenient for drivers.Smart parking are powered by IoT systems that detect the no. of empty parking slots
+and send information over internet to smart application backends.
+b) **Smart Lighting**: for roads, parks and buildings can help in saving energy.
+c) **Smart Roads**: Equipped with sensors can provide information on driving condition, travel time estimating and alert in case of poor driving conditions, traffic condition and accidents.
+d) **Structural Health Monitoring**: uses a network of sensors to monitor the vibration levels in the structures such as bridges and buildings.
+e) **Surveillance**: The video feeds from surveillance cameras can be aggregated in cloud based scalable storage solution.
+f) **Emergency Response**: IoT systems for fire detection, gas and water leakage detection can help in generating alerts and minimizing their effects on the critical infrastructures.
 
-These applications enhance urban infrastructure, leading to **efficient, sustainable, and connected smart cities**.
-
-### 31(a) Comparison: Air Pollution Monitoring vs. Noise Pollution Monitoring in IoT
+### 31(a) Compare the role of Air pollution monitoring and Noise Pollution Monitoring system under the environment category of IoT Domain .
 ### [(CO5)(Analyse/HOCQ)]
 
 | Feature                | Air Pollution Monitoring System | Noise Pollution Monitoring System |
@@ -2153,11 +2172,9 @@ These applications enhance urban infrastructure, leading to **efficient, sustain
 | **Use Cases**        | Smart cities, industrial emissions control, vehicle pollution tracking. | Urban noise pollution management, workplace safety, smart campuses. |
 | **Impact**           | Reduces respiratory diseases and improves public health. | Helps enforce noise regulations and prevents hearing-related issues. |
 
-Both systems contribute to **environmental sustainability** and **public well-being** under the IoT domain.
-
 ---
 
-### 31(b) Machine-to-Machine (M2M) Communication
+### 31(b) Explain M2M Communication                                      
 ### [(CO6)(Remember/LOCQ)]
 
 M2M (Machine-to-Machine) communication refers to the **direct exchange of data between devices** without human intervention. It enables automation across various industries using IoT networks.
@@ -2172,15 +2189,15 @@ M2M plays a crucial role in **smart industries, healthcare, agriculture, and tra
 
 ---
 
-### 31(c) Two M2M Applications
+### 31(c) Name two M2M applications                                                  
 ### [(CO6)(Apply/IOCQ)]
 
-1. **Smart Metering** - Automated electricity, water, and gas meters transmit consumption data to utility providers, improving billing accuracy and resource management.
-2. **Fleet Management** - IoT-enabled vehicle tracking systems monitor fuel usage, route optimization, and maintenance schedules for logistics companies.
+1. **Manufacturing** -M2M tools allow business owners to be alerted on their smartphones when an important piece of equipment needs servicing, so they can address issues as quickly as they arise. Sophisticated networks of sensors connected to the Internet could even order replacement parts automatically.
+2. **Home Appliances** - an M2M-capable washing machine could send alerts to the owners’ smart devices once it finishes washing or drying, and a smart refrigerator could automatically order groceries from Amazon once its inventory is depleted. There are many more examples of home automation that can potentially improve quality of life for residents, including systems that allow members of the household to remotely control HVAC systems using their mobile devices.
 
 M2M applications **enhance operational efficiency, reduce costs, and improve decision-making** in various industries.
 
-### 32(a) Difference Between IoT and M2M Features
+### 32(a) What is the difference between IoT and M2M features ?
 ### [(CO4)(Analyse/HOCQ)]
 
 | Feature               | Internet of Things (IoT)         | Machine-to-Machine (M2M)       |
@@ -2192,11 +2209,9 @@ M2M applications **enhance operational efficiency, reduce costs, and improve dec
 | **Scalability**      | Highly **scalable** and supports billions of devices. | Limited scalability, mainly used in industrial and enterprise settings. |
 | **Example Applications** | Smart homes, healthcare monitoring, autonomous vehicles. | Industrial automation, fleet tracking, remote asset monitoring. |
 
-IoT extends M2M functionality by integrating cloud computing, data analytics, and AI for enhanced automation.
-
 ---
 
-### 32(b) General Architecture of an M2M System
+### 32(b) Explain the general Architecture of M2M System.
 ### [(CO4)(Remember/LOCQ)]
 
 M2M systems consist of multiple components that facilitate **machine-to-machine communication**. The architecture generally includes:
@@ -2221,7 +2236,7 @@ This architecture allows M2M systems to operate **efficiently, securely, and in 
 
 ---
 
-### 32(c) Machines in M2M vs. Things in IoT
+### 32(c)Describe briefly the machines in M2M and things in IoT 
 ### [(CO5)(Apply/IOCQ)]
 
 - **Machines in M2M** are typically **pre-programmed devices** like industrial robots, smart meters, and GPS trackers that operate **autonomously in a fixed network**.
@@ -2229,7 +2244,7 @@ This architecture allows M2M systems to operate **efficiently, securely, and in 
 
 M2M focuses on **direct machine interaction**, while IoT enhances **connectivity, intelligence, and analytics** for broader applications.
 
-### 33(a) Comparison: Data Plane vs. Control Plane in SDN
+### 33(a) Compare data Plane and Control Plane of SDN.
 ### [(CO4)(Analyse/HOCQ)]
 
 | Feature            | Data Plane                         | Control Plane                     |
@@ -2245,7 +2260,7 @@ The **data plane** is responsible for the **actual movement of packets**, while 
 
 ---
 
-### 33(b) Importance of SDN
+### 33(b) Why SDN is important?                                                  
 ### [(CO4)(Remember/LOCQ)]
 
 SDN (Software-Defined Networking) is important because it **decouples network control from hardware**, providing benefits such as:
@@ -2260,7 +2275,7 @@ SDN plays a crucial role in **cloud computing, data centers, and 5G networks**, 
 
 ---
 
-### 33(c) Three Main Components of SDN
+### 33(c) Describe the three main component that make the SDN.
 ### [(CO4)(Apply/IOCQ)]
 
 SDN consists of three key components:
@@ -2281,7 +2296,11 @@ SDN consists of three key components:
 
 Together, these layers **enable programmable, agile, and efficient networking**, making SDN a transformative technology in modern networking.
 
-### 34(a) Comparison: SDN vs. Traditional Networking
+### **SDN Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/SDN.png?raw=true)
+
+
+### 34(a) Compare the Software Defined Networking from Traditional Networking .
 ### [(CO4)(Analyse/HOCQ)]
 
 | Feature                 | Traditional Networking                        | Software-Defined Networking (SDN) |
@@ -2298,7 +2317,7 @@ SDN provides a **more agile, cost-effective, and scalable** approach to networki
 
 ---
 
-### 34(b) Advantages of SDN
+### 34(b) What are the advantages of SDN?   
 ### [(CO4)(Remember/LOCQ)]
 
 SDN offers multiple benefits that enhance network efficiency and management:
@@ -2314,7 +2333,7 @@ SDN simplifies **network operations and enhances adaptability** for modern IT en
 
 ---
 
-### 34(c) SDN Architecture
+### 34(c) Explain the SDN Architecture.  
 ### [(CO4)(Apply/IOCQ)]
 
 SDN architecture consists of three key layers:
@@ -2338,7 +2357,11 @@ SDN architecture consists of three key layers:
 
 This layered architecture **enhances network programmability, automation, and efficiency**, making SDN an essential technology for modern networks.
 
-### 35(a) Comparison: SDN vs. Traditional Networking
+### **SDN Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/SDN.png?raw=true)
+
+
+### 35(a) Compare Software Defined Networking from Traditional Networking 
 ### [(CO4)(Analyse/HOCQ)]
 
 | Feature                 | Traditional Networking                        | Software-Defined Networking (SDN) |
@@ -2355,7 +2378,7 @@ SDN **separates the control plane from the data plane**, making networks more pr
 
 ---
 
-### 35(b) Advantages of Network Function Virtualization (NFV)
+### 35(b) What are the advantages of Network function visualization?
 ### [(CO5)(Remember/LOCQ)]
 
 Network Function Virtualization (NFV) offers several advantages:
@@ -2371,7 +2394,7 @@ NFV **enhances the agility of network services**, making it ideal for cloud and 
 
 ---
 
-### 35(c) Working of NFV (with Block Diagram)
+### 35(c) Describe working of NFV with the help of Block Diagram .
 ### [(CO5)(Apply/IOCQ)]
 
 ### **NFV Architecture & Workflow**
@@ -2395,7 +2418,7 @@ NFV is built on three primary components:
 
 NFV improves network **efficiency, automation, and cost-effectiveness**, making it a key technology in modern telecom and cloud computing.
 
-### 36(a) Properties of Sensors: Range, Sensitivity, and Resolution
+### 36(a) Describe the most important properties of Sensors with respect to Range , Sensitivity and resolution .
 ### [(CO5)(Analyse/HOCQ)]
 
 Sensors are key components of IoT systems. The most important properties are:
@@ -2416,7 +2439,7 @@ Higher **sensitivity and resolution** improve precision, while an appropriate **
 
 ---
 
-### 36(b) Advantages of Network Function Virtualization (NFV)
+### 36(b) What are the advantages of Network function visualization? 
 ### [(CO5)(Remember/LOCQ)]
 
 NFV provides several key benefits:
@@ -2432,7 +2455,7 @@ NFV **modernizes network infrastructure** and enhances service agility for cloud
 
 ---
 
-### 36(c) Working of NFV (with Block Diagram)
+### 36(c) Describe working of NFV with the help of Block Diagram .
 ### [(CO5)(Apply/IOCQ)]
 
 ### **NFV Architecture & Workflow**
@@ -2453,7 +2476,7 @@ NFV consists of three main components:
 
 NFV enhances **network agility, cost-efficiency, and automation**, making it essential for modern telecom and cloud computing networks.
 
-### 37(a) Advantages and Disadvantages of NFV
+### 37(a) Specify the advantages and disadvantages of NFV.
 ### [(CO5)(Analyse/HOCQ)]
 
 ### **Advantages of Network Function Virtualization (NFV):**
@@ -2473,7 +2496,7 @@ NFV enhances **network agility, cost-efficiency, and automation**, making it ess
 
 ---
 
-### 37(b) Steps of IoT Methodology
+### 37(b) Give the steps of IoT Methodology
 ### [(CO3)(Remember/LOCQ)]
 
 IoT systems follow a structured methodology for data collection, processing, and action. The key steps are:
@@ -2495,7 +2518,7 @@ IoT methodology **enables seamless connectivity, real-time processing, and intel
 
 ---
 
-### 37(c) NFV Architecture
+### 37(c) Describe NFV architecture.
 ### [(CO4)(Apply/IOCQ)]
 
 ### **NFV Architecture Overview**
