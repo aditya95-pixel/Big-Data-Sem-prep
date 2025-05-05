@@ -2644,3 +2644,36 @@ IIoT connects IT and OT by enabling data collected from operational systems (OT)
 - Enables real-time, two-way communication between IoT devices and servers.
 - More efficient than HTTP for continuous data exchange (e.g., live monitoring).
 - Ideal for real-time dashboards, remote control, and messaging in IoT systems.
+
+### 41. (a) What is the purpose of WebSocket-based Communication APIs? [(CO6)(Analyse / HOCQ)]
+
+#### Purpose of WebSocket-based Communication APIs:
+- Real-Time Communication – WebSockets enable full-duplex, low-latency communication between client and server, ideal for IoT devices needing continuous data flow.
+- Bidirectional Messaging – Unlike HTTP, which is unidirectional (request/response), WebSockets allow both parties to send data anytime.
+- Reduced Overhead – After the initial handshake, WebSocket connections avoid repeatedly sending HTTP headers, saving bandwidth and processing time.
+- Persistent Connection – A single, long-lived TCP connection remains open for the session, enabling continuous communication without re-establishing connections.
+- Use Cases – Live sensor updates, device control panels, chat applications, remote monitoring systems, and smart home hubs.
+
+### 41. (b) Explain HBase Architecture describing the HMaster, Region Server, and Zookeeper [(CO4)(Remember / LOCQ)]
+
+#### HBase Architecture consists of three key components:
+
+**HMaster**:
+- Acts as the master node in HBase.
+- Responsible for managing Region Servers, load balancing, and assigning regions.
+- Oversees the creation, deletion, and schema changes of tables.
+- Coordinates failover and recovery processes.
+
+**Region Server:**
+- Hosts and manages Regions (horizontal partitions of tables).
+- Handles read and write requests for the data within its regions.
+- Communicates with clients directly to perform operations like GET, PUT, SCAN.
+- Each region contains a MemStore (in-memory), HFile (disk storage), and WAL (Write-Ahead Log).
+
+**Zookeeper**:
+- Acts as a coordination and configuration manager for HBase.
+- Helps in maintaining cluster state, such as which server is active.
+- Detects Region Server failures and helps HMaster assign regions accordingly.
+- Ensures high availability and manages distributed synchronization.
+
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/hbase.png?raw=true)
