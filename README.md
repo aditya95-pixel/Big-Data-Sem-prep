@@ -1891,8 +1891,70 @@ The parameters fall into different categories:
 -Failover/Recovery setup
 
 ### 25(a) Explain with an example the communication complexity /cost of communication of Distributed Computing cluster by equality function.
+In distributed computing, communication complexity refers to the amount of information that must be exchanged between computing nodes (e.g., processors, machines, or agents) to compute a function whose input is split among them. Efficient communication is crucial in such systems, especially when bandwidth is limited or nodes are geographically separated.
 
+One of the simplest and most studied problems in communication complexity is the Equality Function.
 
+We consider a scenario with two parties:
+
+1.  **Alice:** Holds a private $n$-bit binary string $x \in \{0,1\}^n$.
+2.  **Bob:** Holds a private $n$-bit binary string $y \in \{0,1\}^n$.
+
+Neither party knows the other's string initially.
+
+## Goal
+
+The objective for Alice and Bob is to jointly compute the **Equality function**, denoted as $\text{EQ}(x, y)$. This function determines whether their strings are identical. It is defined as:
+
+$$
+\text{EQ}(x, y) =
+\begin{cases}
+1 & \text{if } x = y \\
+0 & \text{if } x \ne y
+\end{cases}
+$$
+
+The computation should result in at least one party (or both) knowing the value of $\text{EQ}(x, y)$. 
+
+## Communication Constraint
+
+The primary challenge and focus of this problem is to compute $\text{EQ}(x, y)$ while **minimizing the total amount of communication** (measured in bits) exchanged between Alice and Bob.
+## Example: Checking Data Equality in a Distributed System
+
+Imagine a distributed file system (e.g., HDFS or Spark) where two worker nodes each hold a `1GB` chunk of a dataset. We need to check if the two chunks are identical.
+
+### Naive Approach
+
+* Send the full `1GB` chunk from one node to the other, or to a master node.
+* **Outcome:** → Impractical due to high communication overhead (1GB).
+
+### Efficient Approach (Hashing)
+
+1.  Each node computes a fixed-size hash of its data chunk (e.g., a `256-bit` SHA-256 hash).
+2.  Each node sends its computed `256-bit` hash to a master node.
+3.  The master compares the received hashes:
+    * If hashes are **equal** → Chunks are *likely* identical (with very high probability).
+    * If hashes are **not equal** → Chunks *differ*.
+
+### Communication Reduction
+
+This efficient approach drastically reduces the communication required from `1GB` down to `256` bits per node.
+
+### 25(b) To streamline HDFS for Big Data, what can be implemented?
+The steps to be implemented are: 
+1. Optimize Data Locality: Ensure computation happens close to the data.
+2. Use Efficient Storage: Employ compression (e.g., Snappy) and columnar formats (e.g., Parquet).
+3. Manage Replication: Adjust the replication factor and consider storage policies.
+4. Optimize NameNode: Implement federation or HA for large clusters.
+5. Efficient Resource Management: Configure YARN effectively.
+
+### 25(c) Describe briefly the functions wireless Video Camera Network.
+Key Functions:
+1. Video Capture: Cameras record live video footage in real time. May support features like night vision, motion detection, and HD/4K quality.
+2. Wireless Data Transmission: Captured video is transmitted wirelessly to base stations, control centers, or cloud storage. Reduces need for wired infrastructure, allowing rapid and flexible deployment.
+3. Real-Time Monitoring: Video streams can be viewed in real time on dashboards, mobile apps, or control rooms. Supports continuous surveillance and immediate response.
+4. Event Detection and Alerts: Uses AI or motion sensors to detect anomalies (e.g., intrusion, fire, crowd movement). Sends real-time alerts to users or authorities via SMS, email, or app notifications.
+5. Data Storage and Archiving: Videos can be stored locally (SD cards), on NVRs (Network Video Recorders), or in the cloud. Supports retrieval for analysis, evidence, or audit.
 ## Group D
 
 ### 26(a) What is the function of management in IoT systems ? 
