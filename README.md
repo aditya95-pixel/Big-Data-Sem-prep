@@ -2882,3 +2882,33 @@ HBase is tightly integrated with Hadoop components and complements HDFS by enabl
 ---
 
 ![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/hbase.png?raw=true)
+
+### 45(a) Compare the role of the Hadoop Ecosystem HBase from Zookeeper .
+
+| Feature / Aspect    | **HBase**                                             | **ZooKeeper**                                                   |
+| ------------------- | ----------------------------------------------------- | --------------------------------------------------------------- |
+| **Type**            | Distributed NoSQL Database                            | Distributed Coordination Service                                |
+| **Primary Role**    | Stores and retrieves large-scale semi-structured data | Manages configuration, synchronization, and coordination        |
+| **Based On**        | Modeled after Google BigTable                         | Modeled after Google's Chubby                                   |
+| **Use Case**        | Random real-time read/write access to big data        | Coordination among distributed systems (e.g., HBase, Kafka)     |
+| **Interaction**     | Directly accessed by client applications              | Used internally by distributed systems like HBase, not by users |
+| **Fault Tolerance** | Depends on ZooKeeper to manage failovers              | Provides leader election and watches to maintain system health  |
+| **Dependency**      | Requires ZooKeeper for operation                      | Independent coordination layer used by many services            |
+| **Data Storage**    | Stores data in HDFS using tables, rows, and columns   | Stores small metadata/configuration data                        |
+
+### 45(b) Describe Request Response IoT communication Model.
+
+#### Request-Response Communication Model:
+- This is a client-server model where the client sends a request and the server returns a response.
+- Commonly used in web and IoT systems where devices request data or services from servers.
+- Example: A smart thermostat (client) requests the current temperature settings from a cloud server.
+
+#### Steps:
+- Client sends a request (e.g., HTTP GET or POST).
+- Server processes the request and prepares the response.
+- Server sends the response back to the client.
+- The connection can be closed or kept alive depending on the protocol used.
+
+**Limitation** : It is not real-time or event-driven; the client must keep polling for updates if it needs new data.
+
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/request-response.png?raw=true)
