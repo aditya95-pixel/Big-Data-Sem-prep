@@ -3114,14 +3114,8 @@ IoT can be used to monitor and manage air quality by providing real-time data on
 4. **Real-Time Data Processing:**  
    - Data from sensors must be processed in real-time to identify pollution levels and detect anomalies. AI or machine learning can be applied to predict pollution trends.
 
-5. **Location and Coverage:**  
-   - The placement of IoT devices should cover different areas, including high-traffic zones, industrial areas, and parks, to get comprehensive data on air quality.
-
-6. **Integration with Other Systems:**  
-   - IoT air pollution systems can be integrated with smart city infrastructure to inform traffic management, health warnings, and public policy decisions.
-
-7. **User Interface:**  
+5. **User Interface:**  
    - The system should provide easy-to-understand visualizations and alerts for citizens, allowing them to make informed decisions regarding outdoor activities.
 
-8. **Data Accuracy and Calibration:**  
+6. **Data Accuracy and Calibration:**  
    - Regular calibration of sensors is crucial to maintain the accuracy of the data being collected and ensure reliable air quality measurements.
