@@ -2968,3 +2968,31 @@ HBase is tightly integrated with Hadoop components and complements HDFS by enabl
 ---
 
 ![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/hive.png?raw=true)
+
+### 47. (a) What is the purpose of Web Service and Analysis Component of IoT Systems?
+
+#### 1. Web Service Component in IoT
+
+The **Web Service** component provides a communication interface between **IoT devices** and **user applications or cloud platforms**. It allows devices to **send and receive data** over the internet using standard protocols like **HTTP**, **MQTT**, or **CoAP**.
+
+#### Purpose:
+- Acts as a **bridge** between devices and applications.
+- Enables **remote access, monitoring, and control** of IoT devices.
+- Supports **RESTful APIs** or **SOAP** for interoperability between systems.
+- Allows **integration with mobile apps, dashboards, or third-party platforms**.
+
+---
+
+#### 2. 📊 Analysis Component in IoT
+
+The **Analysis** component processes the massive data collected from IoT devices to extract **meaningful insights**, detect patterns, and support **real-time decision-making**.
+
+#### Purpose:
+- Performs **data filtering, aggregation, and transformation**.
+- Applies **analytics algorithms** (e.g., machine learning, predictive analytics).
+- Helps in **anomaly detection**, **trend analysis**, and **automation**.
+- Enhances **efficiency, reliability, and intelligence** of IoT systems.
+
+### 47(b)   Draw the block diagram of IoT Level-6 for cloud based application used for prediction and visualization.   
+
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/iot-level-6.png?raw=true)
