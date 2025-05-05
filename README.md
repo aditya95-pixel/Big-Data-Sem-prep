@@ -2794,3 +2794,91 @@ Each stage works together to create an efficient **end-to-end IoT ecosystem**, e
 ![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/iot-arch.jpg?raw=true)
 
 ---
+
+### 44. (a) Explain the Flume Ecosystem
+Apache Flume is a distributed, reliable, and available service for efficiently collecting, aggregating, and moving large amounts of log or streaming data into centralized data stores like HDFS or HBase.
+
+#### Flume Ecosystem Components:
+**Source**:
+- Receives data from an external source (e.g., log files, syslog, Twitter streams).
+- Examples: Netcat, Exec, Spooling Directory, Kafka, etc.
+
+**Channel**:
+- Acts as a temporary storage (like a buffer) between Source and Sink.
+- Ensures reliability during data transfer.
+- Types: Memory Channel (fast but volatile), File Channel (persistent).
+
+**Sink**:
+- Delivers the data to the final destination (e.g., HDFS, HBase, Kafka, Elasticsearch).
+- It reads from the Channel and writes to the output target.
+
+**Agent**:
+- A Flume agent is a JVM process that hosts Source, Channel, and Sink.
+- Each agent works independently and can be configured via a properties file.
+
+**Event**:
+- The data unit in Flume. It consists of a header and a body.
+- The body holds the raw data, and headers store metadata (e.g., timestamp, host).
+
+**Interceptors**:
+- Optional components used to inspect or modify events in-flight.
+- Useful for filtering, routing, or adding extra information to events.
+
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/Flume.png?raw=true)
+
+### 44(b) Describe the IoT functional Blocks.                
+
+IoT systems typically follow a **four-stage architecture**, ensuring seamless data collection, processing, and decision-making.
+
+### **1. Perception Layer (Sensing Layer)**
+- Comprises **sensors, actuators, and edge devices** that collect real-world data.
+- Examples: Temperature sensors, RFID tags, cameras, GPS modules.
+- **Function**: Detects physical parameters and transmits data to the next stage.
+
+### **2. Network Layer**
+- Transmits data from the perception layer to the processing system.
+- Uses **Wi-Fi, Bluetooth, Zigbee, LoRaWAN, Cellular (4G/5G), or Ethernet**.
+- **Function**: Ensures secure and reliable communication between IoT devices and cloud servers.
+
+### **3. Processing Layer (Edge or Fog Computing Layer)**
+- Handles **local data processing and decision-making** before sending data to the cloud.
+- Includes **edge servers, IoT gateways, and microcontrollers (Arduino, Raspberry Pi, ESP32).**
+- **Function**: Reduces latency and network congestion by pre-processing data.
+
+### **4. Application Layer**
+- Provides a user interface for monitoring and controlling IoT systems.
+- Examples: **Mobile apps, web dashboards, voice assistants (Alexa, Google Assistant).**
+- **Function**: Translates data into meaningful insights and enables user interaction.
+
+Each stage works together to create an efficient **end-to-end IoT ecosystem**, ensuring real-time monitoring, automation, and decision-making.
+
+### **IoT architecture system Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/iot-arch.jpg?raw=true)
+
+---
+
+### 44(c) Explain HBase Hadoop Ecosystem.		
+
+**HBase** is a **distributed, scalable, NoSQL database** built on top of the **Hadoop ecosystem**, modeled after Google’s BigTable. It is designed to store and manage **large amounts of sparse, semi-structured data** in **real-time**.
+
+---
+
+#### HBase in the Hadoop Ecosystem
+
+HBase is tightly integrated with Hadoop components and complements HDFS by enabling **random read/write access** to large datasets, something HDFS alone doesn’t support.
+
+
+| **Component**              | **Description**                                                                 |
+|---------------------------|---------------------------------------------------------------------------------|
+| **HDFS**                  | HBase uses HDFS as the **underlying storage layer**. It stores actual table data as files on HDFS. |
+| **MapReduce**             | Used for **batch processing and analytics** on HBase tables using Hadoop's MapReduce engine. |
+| **ZooKeeper**             | Manages **coordination, leader election, and configuration**. Keeps track of HBase nodes and ensures **fault tolerance**. |
+| **HBase Master (HMaster)**| Oversees the cluster, assigns **regions to Region Servers**, and handles **schema changes**. |
+| **Region Server**         | Stores and manages **regions** (subsets of HBase tables). Handles **read/write requests** from clients. |
+| **Client API**            | Allows external applications to **interact with HBase** (e.g., via Java or REST API). |
+| **Hive + HBase Integration** | Hive can query HBase tables using **HiveQL**, enabling **SQL-like querying** of NoSQL data. |
+| **Pig + HBase Integration**  | Apache Pig can access and manipulate HBase data through **HBaseStorage**. |
+
+---
+
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/hbase.png?raw=true)
