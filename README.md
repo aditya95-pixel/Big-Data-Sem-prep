@@ -2614,3 +2614,33 @@ IIoT connects IT and OT by enabling data collected from operational systems (OT)
 - **Enhanced Safety** – Detects unsafe conditions and automates responses to reduce accidents.
 - **Cost Savings** – Minimizes energy usage, maintenance costs, and operational waste.
 - **Data-Driven Decision Making** – Provides real-time analytics and insights for better management and planning.
+
+### 40. (a) Name the IoT protocols of Link Layer and Network Layer (CO4) (Analyse / HOCQ)
+
+#### Link Layer Protocols (Data Link Layer):
+- IEEE 802.15.4 – Used in low-rate wireless personal area networks (LR-WPANs).
+- Bluetooth (BLE) – Short-range, low-power wireless communication.
+- Zigbee – Built on IEEE 802.15.4, used in home automation and sensor networks.
+- LoRaWAN (MAC layer protocol) – Used for long-range communication in low-power devices.
+- Wi-Fi (IEEE 802.11) – High data rate wireless communication.
+- Ethernet – Wired communication in industrial IoT.
+
+#### Network Layer Protocols:
+- IPv6 (Internet Protocol version 6) – Supports large addressing space for IoT devices.
+- 6LoWPAN (IPv6 over Low power Wireless Personal Area Networks) – Adapts IPv6 for IEEE 802.15.4 networks.
+- RPL (Routing Protocol for Low-Power and Lossy Networks) – Designed for routing in IoT environments.
+- IPSec – Provides security at the IP layer.
+
+### 40. (b) Explain HTTP and WebSocket Protocols of the Application Layer of IoT Protocols:
+
+#### HTTP (Hypertext Transfer Protocol):
+- It is a request-response protocol used in web communication.
+- IoT devices use HTTP for simple, stateless communication with web servers.
+- It is easy to implement but not suitable for real-time or low-power scenarios.
+- Example: Smart devices sending sensor data to a cloud server via REST APIs.
+
+#### WebSockets:
+- A full-duplex communication protocol over a single TCP connection.
+- Enables real-time, two-way communication between IoT devices and servers.
+- More efficient than HTTP for continuous data exchange (e.g., live monitoring).
+- Ideal for real-time dashboards, remote control, and messaging in IoT systems.
