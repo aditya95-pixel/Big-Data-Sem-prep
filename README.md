@@ -2912,3 +2912,59 @@ HBase is tightly integrated with Hadoop components and complements HDFS by enabl
 **Limitation** : It is not real-time or event-driven; the client must keep polling for updates if it needs new data.
 
 ![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/request-response.png?raw=true)
+
+### 46(a) Compare REST API from Web Sockets  .  
+
+| Feature                | REST-Based Communication API | WebSocket-Based Communication API |
+|------------------------|-----------------------------|-----------------------------------|
+| **Communication Type** | Request-Response (Synchronous) | Full-Duplex (Asynchronous) |
+| **Connection**         | Stateless, new connection for each request | Persistent, single connection |
+| **Data Transfer**      | Each request gets a separate response | Continuous data exchange |
+| **Latency**           | Higher due to repeated handshakes | Lower since connection is persistent |
+| **Best Use Case**      | Suitable for standard web applications (e.g., RESTful APIs) | Ideal for real-time applications (e.g., chat, gaming, stock updates) |
+| **Scalability**       | Scales well with caching and load balancing | Requires persistent connections, may increase resource consumption |
+
+### **REST-Based Communication APIs Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/REST.png?raw=true)
+
+### **WebSocket-Based Communication APIs Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/Web-Socket-API.png?raw=true)
+
+### 46(b) Explain Pig or Hive of Hadoop Ecosystem.           
+
+#### Apache Hive
+
+**Hive** is a **data warehouse infrastructure** built on top of **Hadoop**. It enables **data summarization, querying, and analysis** of large datasets stored in HDFS using a SQL-like language called **HiveQL**.
+
+---
+
+| **Feature**        | **Description**                                                                 |
+|--------------------|---------------------------------------------------------------------------------|
+| **HiveQL (HQL)**   | SQL-like query language used for managing and querying data in Hadoop.         |
+| **Schema on Read** | Data is interpreted as per schema at query time, not load time.                |
+| **Extensibility**  | Supports UDFs (User Defined Functions) and integration with custom scripts.     |
+| **Batch Processing**| Queries are converted into MapReduce jobs and executed on Hadoop.             |
+| **Integration**    | Can connect with HBase, Pig, and Spark for hybrid processing.                   |
+
+---
+
+#### Hive Architecture
+
+1. **User Interface (UI)**
+- CLI, Web UI, or JDBC/ODBC driver for submitting queries.
+
+2. **Driver**
+- Handles session, parses the query, plans execution, and manages lifecycle.
+
+3. **Compiler**
+- Converts HiveQL into a DAG of MapReduce or Tez/Spark jobs.
+
+4. **Metastore**
+- Stores metadata like table definitions, partitions, schemas, etc. (often in MySQL).
+
+5. **Execution Engine**
+- Executes the DAG using MapReduce, Tez, or Spark.
+
+---
+
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/hive.png?raw=true)
