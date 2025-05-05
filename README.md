@@ -2996,3 +2996,50 @@ The **Analysis** component processes the massive data collected from IoT devices
 ### 47(b)   Draw the block diagram of IoT Level-6 for cloud based application used for prediction and visualization.   
 
 ![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/iot-level-6.png?raw=true)
+
+
+### 48. (a)Explain the role of near field communication (NFC) help in smart payments. 
+**[CO6 – Analyse | HOCQ]**
+
+**Near Field Communication (NFC)** is a short-range wireless communication technology (typically < 4 cm) that enables data exchange between two devices. In smart payments, NFC is used for **contactless transactions** using smartphones, smartwatches, or NFC-enabled cards.
+
+#### 🔹 Role in Smart Payments:
+- **Contactless Transactions:** Enables fast and secure payments without physical contact.
+- **Authentication:** Securely transmits encrypted payment credentials from the user's device to the payment terminal.
+- **Convenience:** Supports mobile wallets (e.g., Google Pay, Apple Pay, Samsung Pay).
+- **Security:** Uses secure elements and tokenization to protect user information.
+
+#### 📌 Example:
+A user taps their phone at a store’s **NFC-enabled POS terminal** to pay instantly without cash or card swiping.
+
+### 48 (b) What are the parameters that characterize the basic functions of a computer network?   
+
+The performance and operation of a computer network are characterized by several key parameters:
+
+| **Parameter**   | **Description**                                                          |
+| --------------- | ------------------------------------------------------------------------ |
+| **Bandwidth**   | Maximum data transfer rate of a network link (measured in Mbps or Gbps). |
+| **Latency**     | Time delay in data transfer from source to destination.                  |
+| **Throughput**  | Actual data transfer rate achieved in a network.                         |
+| **Jitter**      | Variation in packet arrival time, important for real-time communication. |
+| **Error Rate**  | Frequency of errors in data transmission.                                |
+| **Scalability** | Ability to expand the network without performance loss.                  |
+| **Reliability** | Consistency of network performance over time.                            |
+| **Security**    | Protection of data and resources from unauthorized access.               |
+
+### 48(c) Describe how IoT system using RFID tags can help in inventory management.
+
+#### RFID in IoT-Based Inventory Management
+
+**Radio Frequency Identification (RFID)** is an IoT-enabling technology used to **identify and track objects** using radio waves.
+
+#### How RFID Helps in Inventory Management:
+
+- **Real-Time Tracking:** RFID readers can scan tags without line-of-sight, updating item locations instantly.
+- **Automated Data Collection:** Minimizes manual effort and errors in inventory counting.
+- **Stock Monitoring:** Alerts when stock is low, misplaced, or missing.
+- **Warehouse Efficiency:** Enhances locating, sorting, and shipping of goods.
+- **Analytics:** Provides data for demand forecasting and supply chain optimization.
+
+#### 📌 Example:
+Each item in a warehouse is tagged with an **RFID label**. Readers placed at **entry/exit points** log movements, updating the inventory system automatically.
