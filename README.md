@@ -3043,3 +3043,85 @@ The performance and operation of a computer network are characterized by several
 
 #### 📌 Example:
 Each item in a warehouse is tagged with an **RFID label**. Readers placed at **entry/exit points** log movements, updating the inventory system automatically.
+
+### 49. (a) How REST-Based APIs Work?  
+**[CO6 – Analyse | HOCQ]**
+
+**REST (Representational State Transfer)** is an architectural style for designing networked applications. **REST-based APIs** (Application Programming Interfaces) allow communication between clients and servers using standard HTTP methods such as GET, POST, PUT, DELETE, etc.
+
+#### 🔹 How REST-Based APIs Work:
+1. **Client Sends a Request:**  
+   - The client (browser, app, etc.) sends an HTTP request to the server. This request typically includes a method (GET, POST, PUT, DELETE), a URL (Uniform Resource Locator), and optionally, headers and a body (for POST/PUT).
+   
+2. **Server Processes the Request:**  
+   - The server receives the request, processes it, and interacts with the appropriate data source (e.g., a database). It then prepares a response.
+
+3. **Server Sends a Response:**  
+   - The server sends back an HTTP response, which typically includes:
+     - **Status Code:** (e.g., 200 for success, 404 for not found, 500 for server error)
+     - **Data:** The requested data, usually in a format like JSON or XML.
+   
+4. **Client Receives the Response:**  
+   - The client processes the response data and displays it or uses it as needed.
+
+#### 🔹 Key Characteristics of REST APIs:
+- **Stateless:** Every request from a client contains all the necessary information for the server to fulfill the request (no session state is stored on the server).
+- **Uniform Interface:** Simplifies interaction between different systems by using standardized conventions (e.g., GET for retrieval, POST for creation).
+- **Scalable:** REST is designed for scalability, making it a good fit for distributed systems and cloud-based applications.
+
+### **REST-Based Communication APIs Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/REST.png?raw=true)
+
+---
+
+### 49. (b) How Smart Parking System Works?  
+**[CO5 – Remember | LOCQ]**
+
+A **Smart Parking System** uses IoT technology to optimize the use of parking spaces in real-time, reduce traffic congestion, and improve the parking experience.
+
+#### 🔹 How it Works:
+1. **Sensors in Parking Spaces:**  
+   - Each parking spot is equipped with sensors (e.g., ultrasonic sensors, cameras, or infrared sensors) to detect whether a spot is occupied or vacant.
+   
+2. **Real-Time Monitoring:**  
+   - These sensors send data to a central server or cloud platform, which collects and processes the information.
+
+3. **User Interaction:**  
+   - Drivers can access a mobile app or use in-car navigation systems to find available parking spots in real-time. The system provides directions to the nearest available parking.
+
+4. **Payment Integration:**  
+   - Once a driver parks, the system may also offer digital payment options for the parking fee. The system can automatically charge the driver based on the time spent in the parking space.
+
+5. **Dynamic Management:**  
+   - The system can dynamically manage and adjust prices based on parking demand and availability.
+
+---
+
+### 49. (c) Factors Used for the Application of IoT for Air Pollution Monitoring  
+
+IoT can be used to monitor and manage air quality by providing real-time data on pollution levels. Several factors influence the design and effectiveness of an IoT-based air pollution monitoring system.
+
+#### 🔹 Key Factors:
+1. **Sensors and Devices:**  
+   - The quality and accuracy of air pollution data depend on the sensors used. Common sensors include those for detecting PM2.5, PM10, CO2, NO2, SO2, ozone, etc.
+   
+2. **Data Collection:**  
+   - IoT devices collect air quality data from different locations (urban, industrial, residential, etc.) and transmit it to central systems for analysis.
+
+3. **Communication Network:**  
+   - A reliable communication network (e.g., LoRaWAN, Wi-Fi, or cellular networks) is essential for transmitting the collected data in real-time to cloud platforms or local servers.
+
+4. **Real-Time Data Processing:**  
+   - Data from sensors must be processed in real-time to identify pollution levels and detect anomalies. AI or machine learning can be applied to predict pollution trends.
+
+5. **Location and Coverage:**  
+   - The placement of IoT devices should cover different areas, including high-traffic zones, industrial areas, and parks, to get comprehensive data on air quality.
+
+6. **Integration with Other Systems:**  
+   - IoT air pollution systems can be integrated with smart city infrastructure to inform traffic management, health warnings, and public policy decisions.
+
+7. **User Interface:**  
+   - The system should provide easy-to-understand visualizations and alerts for citizens, allowing them to make informed decisions regarding outdoor activities.
+
+8. **Data Accuracy and Calibration:**  
+   - Regular calibration of sensors is crucial to maintain the accuracy of the data being collected and ensure reliable air quality measurements.
