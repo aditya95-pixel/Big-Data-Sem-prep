@@ -2677,3 +2677,72 @@ IIoT connects IT and OT by enabling data collected from operational systems (OT)
 - Ensures high availability and manages distributed synchronization.
 
 ![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/hbase.png?raw=true)
+
+### 42(a) Explain HDFS . Name 3 common frameworks used.
+
+#### Hadoop Distributed File System
+
+In a distributed file system like HDFS, data is stored across multiple nodes organized into a cluster.
+
+#### Components of a Distributed File System:
+
+- **NameNode (Master)**:
+  - Manages metadata and namespace
+  - Keeps track of file directory structure and block locations
+
+- **DataNodes (Workers)**:
+  - Store actual data blocks
+  - Perform read/write operations as instructed by the NameNode
+
+#### Data Distribution:
+- Files are split into fixed-size blocks (e.g., 128 MB)
+- Each block is replicated (default: 3 copies) across different DataNodes for fault tolerance
+
+#### Node Organization:
+- Nodes are often grouped in **racks**
+- **Rack awareness** policy ensures data is replicated across racks to improve fault tolerance and reduce data loss risk
+- Communication between nodes occurs over a high-speed network (Gigabit or 10G Ethernet)
+
+#### Fault Tolerance:
+- If a DataNode fails, the system uses replicated blocks from other nodes
+- NameNode monitors DataNode health using heartbeat signals
+
+#### Visual Representation
+
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/Namenode-and-Datanode.png?raw=true)
+
+#### Three Common Frameworks That Use HDFS:
+- Apache Hive – Data warehousing and SQL querying on large datasets.
+- Apache Pig – High-level platform for analyzing large data sets using a scripting language.
+- Apache Spark – Fast, in-memory data processing engine compatible with HDFS.
+
+### 42. (b) What is Apache Zookeeper? Explain the important components of Zookeeper.
+#### Apache Zookeeper:
+- Zookeeper is a centralized coordination service for distributed applications.
+- It helps manage configuration, naming, synchronization, and group services reliably across a cluster.
+- Zookeeper ensures consistency and fault tolerance for distributed systems like HBase, Kafka, and Hadoop.
+#### Important Components of Zookeeper:
+
+**Znodes**:
+- The fundamental data structure in Zookeeper.
+- Similar to a file system, it stores data in a hierarchical namespace.
+- Each Znode can store small amounts of data and metadata.
+
+**Ensemble**:
+- A group of Zookeeper servers (usually 3, 5, or 7) that form a quorum-based system.
+- One server acts as the leader, and others as followers.
+- Ensures reliability and fault tolerance.
+
+**Leader**:
+- Handles all write operations and coordinate updates to the Znodes.
+- Elected using the Zab (Zookeeper Atomic Broadcast) protocol.
+
+ **Client**:
+- Any application or service that connects to Zookeeper to use its services.
+- Clients can read from any server, but write requests go through the leader.
+
+**Watchers**:
+- Mechanism that allows clients to get notified of changes to znodes.
+- Used for event-driven architecture (e.g., when a configuration value changes).
+
+ ![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/zookeeper.jpg?raw=true)
