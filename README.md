@@ -2746,3 +2746,51 @@ In a distributed file system like HDFS, data is stored across multiple nodes org
 - Used for event-driven architecture (e.g., when a configuration value changes).
 
  ![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/zookeeper.jpg?raw=true)
+
+### 43. (a) Explain the Request and Response Communication Model [(CO6) (Remember / LOCQ)]
+
+#### Request-Response Communication Model:
+- This is a client-server model where the client sends a request and the server returns a response.
+- Commonly used in web and IoT systems where devices request data or services from servers.
+- Example: A smart thermostat (client) requests the current temperature settings from a cloud server.
+
+#### Steps:
+- Client sends a request (e.g., HTTP GET or POST).
+- Server processes the request and prepares the response.
+- Server sends the response back to the client.
+- The connection can be closed or kept alive depending on the protocol used.
+
+**Limitation** : It is not real-time or event-driven; the client must keep polling for updates if it needs new data.
+
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/request-response.png?raw=true)
+
+### 43. (b) Describe IoT Functional Blocks
+
+IoT systems typically follow a **four-stage architecture**, ensuring seamless data collection, processing, and decision-making.
+
+### **1. Perception Layer (Sensing Layer)**
+- Comprises **sensors, actuators, and edge devices** that collect real-world data.
+- Examples: Temperature sensors, RFID tags, cameras, GPS modules.
+- **Function**: Detects physical parameters and transmits data to the next stage.
+
+### **2. Network Layer**
+- Transmits data from the perception layer to the processing system.
+- Uses **Wi-Fi, Bluetooth, Zigbee, LoRaWAN, Cellular (4G/5G), or Ethernet**.
+- **Function**: Ensures secure and reliable communication between IoT devices and cloud servers.
+
+### **3. Processing Layer (Edge or Fog Computing Layer)**
+- Handles **local data processing and decision-making** before sending data to the cloud.
+- Includes **edge servers, IoT gateways, and microcontrollers (Arduino, Raspberry Pi, ESP32).**
+- **Function**: Reduces latency and network congestion by pre-processing data.
+
+### **4. Application Layer**
+- Provides a user interface for monitoring and controlling IoT systems.
+- Examples: **Mobile apps, web dashboards, voice assistants (Alexa, Google Assistant).**
+- **Function**: Translates data into meaningful insights and enables user interaction.
+
+Each stage works together to create an efficient **end-to-end IoT ecosystem**, ensuring real-time monitoring, automation, and decision-making.
+
+### **IoT architecture system Diagram**
+![alt text](https://github.com/aditya95-pixel/Big-Data-Sem-prep/blob/main/iot-arch.jpg?raw=true)
+
+---
